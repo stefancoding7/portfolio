@@ -18,6 +18,7 @@ class CreateSettingsTable extends Migration
             $table->timestamps();
             $table->boolean('site_switch')->default(true);
             $table->string('avatar')->nullable();
+            $table->string('logo')->nullable();
         });
     }
 

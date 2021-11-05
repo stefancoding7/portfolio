@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Nav, Logo, NavLink, Bars, NavMenu, NavBtn } from "./HeaderElements";
+import config from '../../config/config';
 
-const Header = ({ toggle }) => {
+const Header = (props) => {
+  
   return (
     <div className="Container">
       <Nav>
         <Logo to="/">
           <img
-            src="https://gurupawar.github.io/portfolio/assets/logo.png"
+            src={`${config.imagesUrl + props.profile.logo}`}
             alt="logo"
           />
         </Logo>
@@ -29,10 +31,10 @@ const Header = ({ toggle }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Resume
+            Resume 
           </a>
         </NavBtn>
-        <Bars onClick={toggle} />
+        <Bars onClick={props.toggle} />
       </Nav>
     </div>
   );

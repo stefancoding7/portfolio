@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Dropdown from "../Dropdown/Dropdown";
 import Header from "../Header/Header";
+import axios from "axios";
+import config from '../../config/config';
+
 import {
   HeroContainer,
   HeroWrapper,
@@ -10,16 +13,19 @@ import {
   ScrollDown,
   ScrollLink,
 } from "./HeroElements";
-function Hero() {
+function Hero({profile}) {
   const [isOpen, setIsOpen] = useState(false);
+
 
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
+  
   return (
     <main>
       <Dropdown isOpen={isOpen} toggle={toggle} />
-      <Header toggle={toggle} />
+      <Header toggle={toggle} profile={profile}/>
       <HeroContainer>
         <HeroWrapper>
           <HeroLeft>
@@ -31,7 +37,7 @@ function Hero() {
           </HeroLeft>
           <HeroRight>
             <Image
-              src="http://stefancoding.com/images-for-web/profile-cartoon.PNG"
+              src={`${config.imagesUrl + profile.avatar}`}
               alt="man-svgrepo"
             />
           </HeroRight>

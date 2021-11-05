@@ -14,13 +14,28 @@
 
     <!-- Content Row -->
     <div class="row">
-        <div class="card shadow mb-4 p-3">
+        <div class="card shadow m-4 p-3">
+            
             <img style="height:150px; width:150px;" src="{{ asset('/storage/images/' . $settings->avatar) }}" />
             <form method="POST" action="/changeprofile" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Profile picture</label>
                     <input class="form-control" name="profilepicture" type="file" id="formFile">
+                </div>
+                <button type="submit" class="btn btn-primary">Upload</button>
+            </form>
+            
+        </div>
+
+        <div class="card shadow m-4 p-3">
+            
+            <img style="height:150px; width:150px;" src="{{ asset('/storage/images/' . $settings->logo) }}" />
+            <form method="POST" action="/changelogo" enctype="multipart/form-data">
+                @csrf
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Logo</label>
+                    <input class="form-control" name="logo" type="file" id="formFile">
                 </div>
                 <button type="submit" class="btn btn-primary">Upload</button>
             </form>

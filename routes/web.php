@@ -40,6 +40,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 
     Route::post('/changeprofile', [App\Http\Controllers\Admin\SettingsController::class, 'store']);
+    Route::post('/changelogo', [App\Http\Controllers\Admin\SettingsController::class, 'changelogo']);
 });
 Auth::routes();
 

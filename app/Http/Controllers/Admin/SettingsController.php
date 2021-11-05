@@ -106,4 +106,24 @@ class SettingsController extends Controller
     {
         //
     }
+
+    public function changelogo(Request $request)
+    {
+        if($request->hasFile('logo')) {
+            $settings = Settings::find(1);
+            $filename =  $request->logo->getClientOriginalName();
+
+           
+            
+            
+            if($settings->logo) {
+               Storage::delete('/public/images/'.$settings->logo);
+            }
+            $request->logo->storeAs('images', $filename, 'public');
+            $settings->update(['logo' => $filename]);
+            return redirect()->back();
+        } else {
+            return redirect()->back();
+        }
+    }
 }

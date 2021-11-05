@@ -11,7 +11,8 @@ class Settings extends Model
 
     protected $fillable = [
         'site_switch',
-        'avatar'
+        'avatar',
+        'logo'
     ];
 
 }

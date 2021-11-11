@@ -27,7 +27,7 @@ const Header = (props) => {
         <NavBtn>
           <a
             className="btn PrimaryBtn"
-            href="https://github.com/gurupawar/"
+            href={props.profile.resume}
             target="_blank"
             rel="noopener noreferrer"
           >

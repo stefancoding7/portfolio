@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { stackList } from "../../data/ProjectData";
+import Fade from 'react-reveal/Fade';
+import config from '../../config/config';
+
 import {
   Image,
   Technologies,
@@ -8,37 +11,46 @@ import {
   TechName,
   ContactWrapper,
 } from "./AboutElements";
-function About() {
+function About(props) {
+  
+  const [skills, setSkills] = useState([]);
+
+
+
+  useEffect(() => {
+    axios.get(`${config.apiBaseUrl}skills`).then((response) => {
+      setSkills(response.data);
+    });
+  }, []);
+
   return (
-    <ContactWrapper id="about">
+    <Fade right>
+          <ContactWrapper id="about">
       <div className="Container">
         <div className="SectionTitle">About Me</div>
         <div className="BigCard">
           <Image
-            src="https://gurupawar.github.io/portfolio/assets/man-svgrepo-com.svg"
+             src={`${config.imagesUrl + props.profile.about_me_image}`}
             alt="man-svgrepo"
           />
-          <div className="AboutBio">
-            Hello! My name is <strong>Gurushesh Pawar</strong> and I enjoy
-            creating things that live on the internet. My interest in web
-            development started back in 2014 when I decided to try editing
-            custom Blogger themes — redesigning & modifying blogger themes
-            taught me a lot about HTML & CSS!
-          </div>
-          <div className="AboutBio tagline2">
-            I have become confident using the following technologies.
-          </div>
+           <div
+          dangerouslySetInnerHTML={{
+            __html: props.profile.about_me
+          }}></div>
+          
           <Technologies>
-            {stackList.map((stack, index) => (
+            {skills.map((stack, index) => (
               <Tech key={index} className="tech">
-                <TechImg src={stack.img} alt={stack.name} />
-                <TechName>{stack.name}</TechName>
+                <TechImg src={`${config.imagesUrl + stack.skill_image}`} alt={stack.skill} />
+                <TechName>{stack.skill}</TechName>
               </Tech>
             ))}
           </Technologies>
         </div>
       </div>
     </ContactWrapper>
+    </Fade>
+    
   );
 }
 

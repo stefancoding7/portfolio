@@ -19,3 +19,11 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index']);
+
+Route::get('/skills', [App\Http\Controllers\ProfileController::class, 'skills']);
+
+Route::get('/socials', [App\Http\Controllers\ProfileController::class, 'socials']);
+
+
+Route::get('/projects', [App\Http\Controllers\ProjectController::class, 'index']);
+

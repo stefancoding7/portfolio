@@ -1,8 +1,8 @@
-import React from "react";
-import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { FaLinkedin, FaInstagram, FaGithub, FaTwitter, FaFacebook, FaStackOverflow, FaFreeCodeCamp, FaDev } from "react-icons/fa";
 
 import styled from "styled-components";
-
+import config from '../../config/config';
 export const SocialDiv = styled.div`
   margin-top: 2rem;
   display: none;
@@ -11,6 +11,10 @@ export const SocialDiv = styled.div`
     justify-content: center;
     align-items: center;
     list-style: none;
+  }
+
+  ul li {
+    justify-content: start;
   }
 
   a {
@@ -32,37 +36,92 @@ export const SocialDiv = styled.div`
 `;
 
 function SocialIcon() {
+  const [socials, setSocials] = useState([]);
+
+
+
+  useEffect(() => {
+    axios.get(`${config.apiBaseUrl}socials`).then((response) => {
+      setSocials(response.data);
+    });
+  }, []);
+
+  
   return (
     <SocialDiv>
-      <ul>
-        <li className="item">
+    <div >
+    <ul className="row">
+      {socials.map((social, index) => (
+        <li key={index} className="col-4 mt-2">
           <a
-            href="https://www.linkedin.com/in/gurusheshp/"
+            href={`${social.url}`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaLinkedin />
-          </a>
-        </li>
-        <li className="item">
-          <a
-            href="https://github.com/gurupawar/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          
+          {social.name == 'Github' ? (
             <FaGithub />
-          </a>
-        </li>
-        <li className="item">
-          <a
-            href="https://github.com/gurupawar/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          ) : (
+            ''
+          )}
+
+          {social.name == 'Linkedin' ? (
+            <FaLinkedin />
+          ) : (
+            ''
+          )}
+
+          {social.name == 'Twitter' ? (
+            <FaTwitter />
+          ) : (
+           ''
+          )}
+
+          {social.name == 'Facebook' ? (
+            <FaFacebook />
+          ) : (
+           ''
+          )}
+
+          {social.name == 'StackOverflow' ? (
+            <FaStackOverflow />
+          ) : (
+           ''
+          )}
+
+          {social.name == 'FreeCodeCamp' ? (
+            <FaFreeCodeCamp />
+          ) : (
+           ''
+          )}
+
+          {social.name == 'Dev' ? (
+            <FaDev />
+          ) : (
+           ''
+          )}
+
+          {social.name == 'Instagram' ? (
             <FaInstagram />
+          ) : (
+           ''
+          )}
+          
+
+         
+
+         
+
+          
+            
           </a>
         </li>
+
+      ))}
+        
       </ul>
+    </div>
+      
     </SocialDiv>
   );
 }

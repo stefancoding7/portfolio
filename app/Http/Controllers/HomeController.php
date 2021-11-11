@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Settings;
 class HomeController extends Controller
 {
     /**
@@ -11,10 +11,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+   
 
     /**
      * Show the application dashboard.
@@ -23,7 +20,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('auth.register');
+        $settings = Settings::find(1);
+        return view('index', ['settings' => $settings] );
     }
 
     public function admin()
@@ -31,4 +29,4 @@ class HomeController extends Controller
         return view('auth/login');
     }
 }
- //g
+ //gg 

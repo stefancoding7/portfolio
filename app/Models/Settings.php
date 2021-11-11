@@ -12,7 +12,13 @@ class Settings extends Model
     protected $fillable = [
         'site_switch',
         'avatar',
-        'logo'
+        'logo',
+        'short_info',
+        'about_me_image',
+        'about_me',
+        'email',
+        'site_name',
+        'resume'
     ];
 
 }

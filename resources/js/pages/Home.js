@@ -28,9 +28,9 @@ function Home() {
     <>
       <Hero profile={profile}/>
       <Projects />
-      <About />
-      <Contact />
-      <Footer />
+      <About profile={profile}/>
+      <Contact profile={profile}/>
+      <Footer profile={profile}/>
       <FixSocialIcon />
     </>
   );

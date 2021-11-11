@@ -1,17 +1,19 @@
 import React from "react";
 import SocialIcon from "../SocialIcon/SocialIcon";
 import { ContactWrapper, Email } from "./ContactElements";
-function Contact() {
+import Fade from 'react-reveal/Fade';
+function Contact(props) {
   return (
-    <ContactWrapper id="contact">
+    <Fade bottom>
+          <ContactWrapper id="contact">
       <div className="Container">
         <div className="SectionTitle">Get In Touch</div>
         <div className="BigCard">
           <Email>
-            <span>vickypawar185@gmail.com</span>
+            <span>{props.profile.email}</span>
             <a
               className="btn PrimaryBtn"
-              href="mailto:vickypawar185@gmail.com"
+              href={"mailto:" + props.profile.email}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -22,6 +24,8 @@ function Contact() {
         <SocialIcon />
       </div>
     </ContactWrapper>
+    </Fade>
+    
   );
 }
 

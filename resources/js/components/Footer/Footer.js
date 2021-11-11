@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+
 const FooterSection = styled.div`
   background-image: url(https://raw.githubusercontent.com/gurupawar/portfolio/main/assets/footer_wave.svg);
   background-repeat: no-repeat;
@@ -19,18 +20,18 @@ const FooterSection = styled.div`
     }
   }
 `;
-function Footer() {
+function Footer(props) {
   return (
     <FooterSection>
       <div className="Container">
         <span>
           Coded with 💙 by{" "}
           <a
-            href="https://github.com/gurupawar//"
+            href={props.profile.email}
             target="_blank"
             rel="noopener noreferrer"
           >
-            @gurupawar
+            {props.profile.site_name}
           </a>{" "}
         </span>
       </div>

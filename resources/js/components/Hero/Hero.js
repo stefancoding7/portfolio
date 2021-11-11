@@ -29,11 +29,10 @@ function Hero({profile}) {
       <HeroContainer>
         <HeroWrapper>
           <HeroLeft>
-            <h1>Hi, I'm Stefan</h1>
-            <h5>Full-stack developer</h5>
-            <p>
-              I design and code beautifully simple things, and I love what I do.
-            </p>
+                  <div
+          dangerouslySetInnerHTML={{
+            __html: profile.short_info
+          }}></div>
           </HeroLeft>
           <HeroRight>
             <Image

@@ -1,6 +1,7 @@
-import React from "react";
-import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { FaLinkedin, FaInstagram, FaGithub, FaTwitter, FaFacebook, FaStackOverflow, FaFreeCodeCamp, FaDev } from "react-icons/fa";
 import styled from "styled-components";
+import config from '../../config/config';
 
 const Social = styled.div`
   display: block;
@@ -31,36 +32,88 @@ const Social = styled.div`
   }
 `;
 function FixSocialIcon() {
+  const [socials, setSocials] = useState([]);
+
+
+
+  useEffect(() => {
+    axios.get(`${config.apiBaseUrl}socials`).then((response) => {
+      setSocials(response.data);
+    });
+  }, []);
+
+  
   return (
     <Social>
       <ul>
-        <li className="item">
+      {socials.map((social, index) => (
+        <li key={index} className="item">
           <a
-            href="https://www.linkedin.com/in/gurusheshp/"
+            href={`${social.url}`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaLinkedin />
-          </a>
-        </li>
-        <li className="item">
-          <a
-            href="https://github.com/gurupawar/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          
+          {social.name == 'Github' ? (
             <FaGithub />
-          </a>
-        </li>
-        <li className="item">
-          <a
-            href="https://github.com/gurupawar/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          ) : (
+            ''
+          )}
+
+          {social.name == 'Linkedin' ? (
+            <FaLinkedin />
+          ) : (
+            ''
+          )}
+
+          {social.name == 'Twitter' ? (
+            <FaTwitter />
+          ) : (
+           ''
+          )}
+
+          {social.name == 'Facebook' ? (
+            <FaFacebook />
+          ) : (
+           ''
+          )}
+
+          {social.name == 'StackOverflow' ? (
+            <FaStackOverflow />
+          ) : (
+           ''
+          )}
+
+          {social.name == 'FreeCodeCamp' ? (
+            <FaFreeCodeCamp />
+          ) : (
+           ''
+          )}
+
+          {social.name == 'Dev' ? (
+            <FaDev />
+          ) : (
+           ''
+          )}
+
+          {social.name == 'Instagram' ? (
             <FaInstagram />
+          ) : (
+           ''
+          )}
+          
+
+         
+
+         
+
+          
+            
           </a>
         </li>
+
+      ))}
+        
       </ul>
     </Social>
   );

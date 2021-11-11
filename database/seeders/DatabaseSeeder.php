@@ -24,7 +24,14 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('settings')->insert([
-            'site_switch' => true
+            'site_switch' => true,
+            'short_info' => "<h1>Hi, I'm Stefan</h1>
+            <h5>Full-stack developer</h5>
+            <p>
+              I design and code beautifully simple things, and I love what I do.
+            </p>"
         ]);
+
+        
     }
 }

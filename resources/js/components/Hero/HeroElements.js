@@ -108,6 +108,9 @@ export const ScrollDown = styled(LinkScroll)`
   }
 `;
 
+
+
+
 export const ScrollLink = styled.div`
   display: flex;
   align-items: center;
@@ -119,4 +122,51 @@ export const ScrollLink = styled.div`
     width: 35px;
     margin-left: 6px;
   }
+
+  .arrow {
+	width: 0;
+	height: 40px;
+	border: 1px solid #333;
+	position: relative;
+	animation: scroll 1.5s infinite;
+	-webkit-animation: scroll 1.5s infinite;
+	&::after {
+		content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: -5px;
+    width: 1px;
+    height: 10px;
+		
+		// triangle
+    border-top: 10px solid #333;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+	}
+}
+
+@keyframes scroll {
+	0% {
+		height: 40px;
+	}
+	30% {
+		height: 70px;
+	}
+	60% {
+		height: 40px;
+	}
+}
+
+@-webkit-keyframes scroll {
+	0% {
+		height: 40px;
+	}
+	30% {
+		height: 70px;
+	}
+	60% {
+		height: 40px;
+	}
+}
 `;

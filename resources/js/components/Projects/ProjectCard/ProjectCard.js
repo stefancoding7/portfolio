@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ProjectList } from "../../../data/ProjectData";
+import config from '../../../config/config';
+import Fade from 'react-reveal/Fade';
+
+
+
 import {
   Card,
   CardLeft,
@@ -8,24 +13,45 @@ import {
   BtnGroup,
 } from "./ProjectCardElements";
 function ProjectCard() {
+
+  const [project, setProject] = useState([]);
+  
+
+
+  useEffect(() => {
+    axios.get(`${config.apiBaseUrl}projects`).then((response) => {
+      setProject(response.data);
+    });
+  }, []);
+
+  
+
   return (
     <>
-      {ProjectList.map((list, index) => (
+      {project.map((list, index) => (
+        <>
+       
+        <Fade left>
         <Card key={index}>
           <CardLeft>
-            <img src={list.img} alt={list.name} />
+            <img src={`${config.imagesUrl + list.image}`} alt={list.title} />
           </CardLeft>
           <CardRight>
             <h4>{list.title}</h4>
             <p>{list.description}</p>
             <Stack>
               <span className="stackTitle">Tech Stack -</span>
-              <span className="tags">{list.tech_stack}</span>
+              
+    <span className="tags">{list.tags}</span>
+
+                
+              
+             
             </Stack>
             <BtnGroup>
               <a
                 className="btn btn2 SecondarBtn"
-                href={list.github_url}
+                href={list.source_link}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -33,7 +59,7 @@ function ProjectCard() {
               </a>
               <a
                 className="btn PrimaryBtn"
-                href={list.demo_url}
+                href={list.demo_link}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -42,6 +68,10 @@ function ProjectCard() {
             </BtnGroup>
           </CardRight>
         </Card>
+        </Fade>
+        </>
+        
+        
       ))}
     </>
   );

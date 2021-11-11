@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import axios from "axios";
 import config from '../../config/config';
 
+
 import {
   HeroContainer,
   HeroWrapper,
@@ -15,13 +16,19 @@ import {
 } from "./HeroElements";
 function Hero({profile}) {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [avatar, setAvatar] = useState('');
 
   const toggle = () => {
     setIsOpen(!isOpen);
   };
 
-  
+  useEffect(() => {
+    axios.get(`${config.apiBaseUrl}profile`).then((response) => {
+      setAvatar(response.data);
+    });
+  }, []);
+
+  console.log(avatar)
   return (
     <main>
       <Dropdown isOpen={isOpen} toggle={toggle} />
@@ -36,8 +43,8 @@ function Hero({profile}) {
           </HeroLeft>
           <HeroRight>
             <Image
-              src={`${config.imagesUrl + profile.avatar}`}
-              alt="man-svgrepo"
+              src={`${config.imagesUrl + avatar.avatar}`}
+              alt="StefanCoding"
             />
           </HeroRight>
         </HeroWrapper>

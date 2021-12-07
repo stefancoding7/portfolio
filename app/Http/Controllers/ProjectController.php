@@ -13,4 +13,15 @@ class ProjectController extends Controller
         return response()->json($projects);
     }
 
+    public function counter(Request $request) 
+    {
+        $id = $request->id;
+        $project = Project::find($id);
+        $counter = $project->visitors;
+        $counter++;
+        $project->update(
+            ['visitors' => $counter]
+        );
+    }
+
 }

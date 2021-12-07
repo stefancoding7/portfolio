@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 
 const FooterSection = styled.div`
-  background-image: url(https://raw.githubusercontent.com/gurupawar/portfolio/main/assets/footer_wave.svg);
+  background-image: url(https://res.cloudinary.com/dbqxzdxhf/image/upload/v1636666568/wave_nz0os0.svg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 250px;
+  height: 300px;
   position: relative;
 
   span {

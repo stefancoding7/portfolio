@@ -32,6 +32,11 @@ class DatabaseSeeder extends Seeder
             </p>"
         ]);
 
+        DB::table('seos')->insert([
+            'basic_title' => NULL,
+        ]);
+
+
         
     }
 }

@@ -13,20 +13,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #fafaff;
   font-weight: 400;
-}
-
-main {
-  background: #B55A30;
-  background-image: url(https://res.cloudinary.com/dbqxzdxhf/image/upload/v1636658140/josh-rose-trYl7JYATH0-unsplash_zuvj8u.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  clip-path: ellipse(300% 100% at 200% 0%);
-  -webkit-animation: fadein 4s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 4s; /* Firefox < 16 */
-        -ms-animation: fadein 4s; /* Internet Explorer */
-         -o-animation: fadein 4s; /* Opera < 12.1 */
-            animation: fadein 4s;
+  -webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 5s; /* Firefox < 16 */
+        -ms-animation: fadein 5s; /* Internet Explorer */
+         -o-animation: fadein 5s; /* Opera < 12.1 */
+            animation: fadein 5s;
 }
 
 @keyframes fadein {
@@ -57,6 +48,19 @@ main {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+
+main {
+  background: #B55A30;
+  background-image: url(https://images.unsplash.com/photo-1609602644879-dd158c2b56b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  clip-path: ellipse(114% 100% at 50% 0%);
+  
+  
+}
+
+
 
 a {
   text-decoration: none;
@@ -100,9 +104,9 @@ video {
 }
 
 .btn {
-  border: 2px solid rgb(57, 134, 250);
+  
   padding: 10px 1rem;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   font-weight: 400;
@@ -110,7 +114,7 @@ video {
 }
 
 .PrimaryBtn {
-  background: rgb(57, 134, 250);
+  background: rgb(83, 83, 83);
   color: #f6f6f6;
 }
 

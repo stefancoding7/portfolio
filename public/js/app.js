@@ -3179,7 +3179,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var FooterSection = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  background-image: url(https://raw.githubusercontent.com/gurupawar/portfolio/main/assets/footer_wave.svg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  width: 100%;\n  height: 250px;\n  position: relative;\n\n  span {\n    position: absolute;\n    bottom: 4rem;\n    color: #fff;\n\n    a {\n      text-decoration: underline;\n    }\n  }\n"])));
+var FooterSection = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  background-image: url(https://res.cloudinary.com/dbqxzdxhf/image/upload/v1636666568/wave_nz0os0.svg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  width: 100%;\n  height: 300px;\n  position: relative;\n\n  span {\n    position: absolute;\n    bottom: 4rem;\n    color: #fff;\n\n    a {\n      text-decoration: underline;\n    }\n  }\n"])));
 
 function Footer(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FooterSection, {
@@ -3367,7 +3367,6 @@ function Hero(_ref) {
       setAvatar(response.data);
     });
   }, []);
-  console.log(avatar);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("main", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Dropdown_Dropdown__WEBPACK_IMPORTED_MODULE_1__["default"], {
       isOpen: isOpen,
@@ -3393,7 +3392,7 @@ function Hero(_ref) {
         to: "projects",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_HeroElements__WEBPACK_IMPORTED_MODULE_5__.ScrollLink, {
           children: ["Scroll down", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-            src: "https://raw.githubusercontent.com/gurupawar/portfolio/main/assets/scroll-down.svg",
+            src: "https://icon-library.com/images/scroll-down-icon-png/scroll-down-icon-png-5.jpg",
             alt: "scroll-down"
           })]
         })
@@ -3492,6 +3491,18 @@ function ProjectCard() {
       setProject(response.data);
     });
   }, []);
+
+  var counter = function counter(id) {
+    axios.post("".concat(_config_config__WEBPACK_IMPORTED_MODULE_2__["default"].apiBaseUrl, "counter"), {
+      id: id
+    }).then(function (response) {
+      console.log(response);
+    })["catch"](function (error) {
+      console.log(error);
+    });
+    console.log(id);
+  };
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: project.map(function (list, index) {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
@@ -3518,6 +3529,9 @@ function ProjectCard() {
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_ProjectCardElements__WEBPACK_IMPORTED_MODULE_4__.BtnGroup, {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                  onClick: function onClick() {
+                    counter(list.id);
+                  },
                   className: "btn btn2 SecondarBtn",
                   href: list.source_link,
                   target: "_blank",
@@ -3903,10 +3917,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Contact_Contact__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Contact/Contact */ "./resources/js/components/Contact/Contact.js");
 /* harmony import */ var _components_Footer_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Footer/Footer */ "./resources/js/components/Footer/Footer.js");
 /* harmony import */ var _components_SocialIcon_FixSocialIcon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/SocialIcon/FixSocialIcon */ "./resources/js/components/SocialIcon/FixSocialIcon.js");
-/* harmony import */ var react_fade_in__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-fade-in */ "./node_modules/react-fade-in/lib/index.js");
-/* harmony import */ var react_fade_in__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_fade_in__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _config_config__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../config/config */ "./resources/js/config/config.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _config_config__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../config/config */ "./resources/js/config/config.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -3931,7 +3943,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 function Home() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
@@ -3939,23 +3950,20 @@ function Home() {
       setProfile = _useState2[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios.get("".concat(_config_config__WEBPACK_IMPORTED_MODULE_8__["default"].apiBaseUrl, "profile")).then(function (response) {
+    axios.get("".concat(_config_config__WEBPACK_IMPORTED_MODULE_7__["default"].apiBaseUrl, "profile")).then(function (response) {
       setProfile(response.data);
     });
   }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)((react_fade_in__WEBPACK_IMPORTED_MODULE_7___default()), {
-      onComplete: true,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Hero_Hero__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        profile: profile
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Projects_Projects__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_About_About__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        profile: profile
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Contact_Contact__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        profile: profile
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_Footer_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        profile: profile
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_SocialIcon_FixSocialIcon__WEBPACK_IMPORTED_MODULE_6__["default"], {})]
-    })
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Hero_Hero__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      profile: profile
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Projects_Projects__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_About_About__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      profile: profile
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Contact_Contact__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      profile: profile
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_Footer_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      profile: profile
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_SocialIcon_FixSocialIcon__WEBPACK_IMPORTED_MODULE_6__["default"], {})]
   });
 }
 
@@ -8395,7 +8403,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "*,\n*::before,\n*::after {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  scroll-behavior: smooth;\n}\nbody {\n  font-family: \"Poppins\", sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  background: #fafaff;\n  font-weight: 400;\n}\n\nmain {\n  background: #B55A30;\n  background-image: url(https://res.cloudinary.com/dbqxzdxhf/image/upload/v1636658140/josh-rose-trYl7JYATH0-unsplash_zuvj8u.jpg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  width: 100%;\n  -webkit-clip-path: ellipse(300% 100% at 200% 0%);\n          clip-path: ellipse(300% 100% at 200% 0%);\n  -webkit-animation: fadein 4s; /* Safari, Chrome and Opera > 12.1 */ /* Firefox < 16 */ /* Internet Explorer */ /* Opera < 12.1 */\n            animation: fadein 4s;\n}\n\n@keyframes fadein {\n  from { opacity: 0; }\n  to   { opacity: 1; }\n}\n\n/* Firefox < 16 */\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n  from { opacity: 0; }\n  to   { opacity: 1; }\n}\n\n/* Internet Explorer */\n\n/* Opera < 12.1 */\n\na {\n  text-decoration: none;\n  color: inherit;\n  background-color: transparent;\n}\n\nul,\nol {\n  list-style: none;\n}\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\nsection {\n  display: block;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-size: 100%;\n  font-weight: normal;\n}\n\nimg,\nvideo {\n  display: block;\n  max-width: 100%;\n}\n\n.btn {\n  border: 2px solid rgb(57, 134, 250);\n  padding: 10px 1rem;\n  border-radius: 5px;\n  cursor: pointer;\n  transition: all 0.2s ease-in-out;\n  font-weight: 400;\n  outline: none;\n}\n\n.PrimaryBtn {\n  background: rgb(57, 134, 250);\n  color: #f6f6f6;\n}\n\n.PrimaryBtn:hover {\n  background: #fff;\n  color: #010606;\n}\n\n.SecondarBtn:hover {\n  background: rgb(57, 134, 250);\n  color: #fff;\n}\n\n.btn2 {\n  margin-right: 1rem;\n}\n\n.Container {\n  width: 100%;\n  padding-right: 1rem;\n  padding-left: 1rem;\n  margin-right: auto;\n  margin-left: auto;\n}\n\n.BigCard {\n  padding-top: 3rem;\n  padding-bottom: 3rem;\n  padding-right: 2rem;\n  padding-left: 2rem;\n  border-radius: 1rem;\n  display: flex;\n  flex-direction: column;\n  background: #fff;\n  box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;\n  /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),\n    0 4px 6px -2px rgba(0, 0, 0, 0.05); */\n}\n\n.AboutBio,\n.tagline2 {\n  text-align: center;\n  max-width: 650px;\n  margin: 0 auto;\n  color: #151418;\n  line-height: 1.6;\n}\n\n.tagline2 {\n  margin-top: 1rem;\n  margin-bottom: 2rem;\n}\n\n.SectionTitle {\n  font-size: 28px;\n  color: #151418;\n  font-weight: 700;\n  margin-bottom: 3.5rem;\n}\n.ProjectWrapper {\n  margin-top: 3rem;\n}\n\n/* ------------------------------------ Media for Container */\n@media (min-width: 576px) {\n  .Container {\n    max-width: 540px;\n  }\n}\n@media (min-width: 768px) {\n  .Container {\n    max-width: 720px;\n  }\n  .ProjectWrapper {\n    margin-top: 3rem;\n  }\n}\n@media (min-width: 992px) {\n  .Container {\n    max-width: 960px;\n  }\n}\n@media (min-width: 1200px) {\n  .Container {\n    max-width: 1000px;\n  }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "*,\n*::before,\n*::after {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  scroll-behavior: smooth;\n}\nbody {\n  font-family: \"Poppins\", sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  background: #fafaff;\n  font-weight: 400;\n  -webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */ /* Firefox < 16 */ /* Internet Explorer */ /* Opera < 12.1 */\n            animation: fadein 5s;\n}\n\n@keyframes fadein {\n  from { opacity: 0; }\n  to   { opacity: 1; }\n}\n\n/* Firefox < 16 */\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n  from { opacity: 0; }\n  to   { opacity: 1; }\n}\n\n/* Internet Explorer */\n\n/* Opera < 12.1 */\n\nmain {\n  background: #B55A30;\n  background-image: url(https://images.unsplash.com/photo-1609602644879-dd158c2b56b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80);\n  background-repeat: no-repeat;\n  background-size: cover;\n  width: 100%;\n  -webkit-clip-path: ellipse(114% 100% at 50% 0%);\n          clip-path: ellipse(114% 100% at 50% 0%);\n  \n  \n}\n\n\n\na {\n  text-decoration: none;\n  color: inherit;\n  background-color: transparent;\n}\n\nul,\nol {\n  list-style: none;\n}\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\nsection {\n  display: block;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-size: 100%;\n  font-weight: normal;\n}\n\nimg,\nvideo {\n  display: block;\n  max-width: 100%;\n}\n\n.btn {\n  \n  padding: 10px 1rem;\n  border-radius: 20px;\n  cursor: pointer;\n  transition: all 0.2s ease-in-out;\n  font-weight: 400;\n  outline: none;\n}\n\n.PrimaryBtn {\n  background: rgb(83, 83, 83);\n  color: #f6f6f6;\n}\n\n.PrimaryBtn:hover {\n  background: #fff;\n  color: #010606;\n}\n\n.SecondarBtn:hover {\n  background: rgb(57, 134, 250);\n  color: #fff;\n}\n\n.btn2 {\n  margin-right: 1rem;\n}\n\n.Container {\n  width: 100%;\n  padding-right: 1rem;\n  padding-left: 1rem;\n  margin-right: auto;\n  margin-left: auto;\n}\n\n.BigCard {\n  padding-top: 3rem;\n  padding-bottom: 3rem;\n  padding-right: 2rem;\n  padding-left: 2rem;\n  border-radius: 1rem;\n  display: flex;\n  flex-direction: column;\n  background: #fff;\n  box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;\n  /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),\n    0 4px 6px -2px rgba(0, 0, 0, 0.05); */\n}\n\n.AboutBio,\n.tagline2 {\n  text-align: center;\n  max-width: 650px;\n  margin: 0 auto;\n  color: #151418;\n  line-height: 1.6;\n}\n\n.tagline2 {\n  margin-top: 1rem;\n  margin-bottom: 2rem;\n}\n\n.SectionTitle {\n  font-size: 28px;\n  color: #151418;\n  font-weight: 700;\n  margin-bottom: 3.5rem;\n}\n.ProjectWrapper {\n  margin-top: 3rem;\n}\n\n/* ------------------------------------ Media for Container */\n@media (min-width: 576px) {\n  .Container {\n    max-width: 540px;\n  }\n}\n@media (min-width: 768px) {\n  .Container {\n    max-width: 720px;\n  }\n  .ProjectWrapper {\n    margin-top: 3rem;\n  }\n}\n@media (min-width: 992px) {\n  .Container {\n    max-width: 960px;\n  }\n}\n@media (min-width: 1200px) {\n  .Container {\n    max-width: 1000px;\n  }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -68296,101 +68304,6 @@ function checkDCE() {
 if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-dom.development.js */ "./node_modules/react-dom/cjs/react-dom.development.js");
 }
-
-
-/***/ }),
-
-/***/ "./node_modules/react-fade-in/lib/FadeIn.js":
-/*!**************************************************!*\
-  !*** ./node_modules/react-fade-in/lib/FadeIn.js ***!
-  \**************************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-function FadeIn(props) {
-    var _a = react_1.useState(0), maxIsVisible = _a[0], setMaxIsVisible = _a[1];
-    var transitionDuration = props.transitionDuration || 400;
-    var delay = props.delay || 50;
-    var WrapperTag = props.wrapperTag || "div";
-    var ChildTag = props.childTag || "div";
-    var visible = typeof props.visible === "undefined" ? true : props.visible;
-    react_1.useEffect(function () {
-        var count = react_1.default.Children.count(props.children);
-        if (!visible) {
-            // Animate all children out
-            count = 0;
-        }
-        if (count == maxIsVisible) {
-            // We're done updating maxVisible, notify when animation is done
-            var timeout_1 = setTimeout(function () {
-                if (props.onComplete)
-                    props.onComplete();
-            }, transitionDuration);
-            return function () { return clearTimeout(timeout_1); };
-        }
-        // Move maxIsVisible toward count
-        var increment = count > maxIsVisible ? 1 : -1;
-        var timeout = setTimeout(function () {
-            setMaxIsVisible(maxIsVisible + increment);
-        }, delay);
-        return function () { return clearTimeout(timeout); };
-    }, [
-        react_1.default.Children.count(props.children),
-        delay,
-        maxIsVisible,
-        visible,
-        transitionDuration,
-    ]);
-    return (react_1.default.createElement(WrapperTag, { className: props.className }, react_1.default.Children.map(props.children, function (child, i) {
-        return (react_1.default.createElement(ChildTag, { className: props.childClassName, style: {
-                transition: "opacity " + transitionDuration + "ms, transform " + transitionDuration + "ms",
-                transform: maxIsVisible > i ? "none" : "translateY(20px)",
-                opacity: maxIsVisible > i ? 1 : 0,
-            } }, child));
-    })));
-}
-exports["default"] = FadeIn;
-
-
-/***/ }),
-
-/***/ "./node_modules/react-fade-in/lib/index.js":
-/*!*************************************************!*\
-  !*** ./node_modules/react-fade-in/lib/index.js ***!
-  \*************************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports["default"] = void 0;
-var FadeIn_1 = __webpack_require__(/*! ./FadeIn */ "./node_modules/react-fade-in/lib/FadeIn.js");
-Object.defineProperty(exports, "default", ({ enumerable: true, get: function () { return __importDefault(FadeIn_1).default; } }));
 
 
 /***/ }),

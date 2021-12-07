@@ -5,7 +5,7 @@ import About from "../components/About/About";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import FixSocialIcon from "../components/SocialIcon/FixSocialIcon";
-import FadeIn from 'react-fade-in';
+
 
 
 import config from '../config/config';
@@ -16,7 +16,7 @@ import config from '../config/config';
 function Home() {
   const [profile, setProfile] = useState([]);
 
-
+  
 
   useEffect(() => {
     axios.get(`${config.apiBaseUrl}profile`).then((response) => {
@@ -27,7 +27,7 @@ function Home() {
 
   return (
     <>
-    <FadeIn onComplete>
+    
 
       <Hero profile={profile}/>
       <Projects />
@@ -35,7 +35,7 @@ function Home() {
       <Contact profile={profile}/>
       <Footer profile={profile}/>
       <FixSocialIcon />
-    </FadeIn>
+    
 
       
     </>

@@ -39,6 +39,15 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/auth/admin/documentation', [App\Http\Controllers\Admin\DocumentationController::class, 'index'])->name('documentation');
     Route::get('/auth/admin/projects', [App\Http\Controllers\Admin\ProjectController::class, 'index'])->name('projects');
     Route::get('/auth/admin/project/{id}', [App\Http\Controllers\Admin\ProjectController::class, 'show'])->name('edit-project');
+    Route::get('/auth/admin/seo', [App\Http\Controllers\Admin\SeoController::class, 'index'])->name('seo');
+
+
+    //SEO
+    Route::post('/basic', [App\Http\Controllers\Admin\SeoController::class, 'basic'])->name('basic');
+    Route::post('/analytics', [App\Http\Controllers\Admin\SeoController::class, 'analytics'])->name('analytics');
+
+
+
 
     Route::post('/site-name', [App\Http\Controllers\Admin\SettingsController::class, 'siteName'])->name('site-name');
     Route::post('/resume', [App\Http\Controllers\Admin\SettingsController::class, 'resume'])->name('resume');

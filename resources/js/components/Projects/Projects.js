@@ -3,7 +3,7 @@ import ProjectCard from "./ProjectCard/ProjectCard";
 function Projects() {
   return (
     <>
-      
+     
       <div className="ProjectWrapper" id="projects">
         <div className="Container">
           <div className="SectionTitle">Projects</div>

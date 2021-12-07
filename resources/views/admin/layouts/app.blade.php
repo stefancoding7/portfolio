@@ -93,6 +93,12 @@
                     <span>Profile settings</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('seo') }}">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Seo settings</span></a>
+            </li>
+
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('documentation') }}">

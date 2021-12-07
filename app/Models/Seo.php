@@ -5,18 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Seo extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'image',
-        'title',
-        'description',
-        'tags',
-        'source_link',
-        'demo_link',
-        'short_by',
-        'visitors'
+        'basic_title',
+        'basic_description',
+        'analytics_1',
+        'analytics_2',
     ];
 }

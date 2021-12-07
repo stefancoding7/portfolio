@@ -24,6 +24,20 @@ function ProjectCard() {
     });
   }, []);
 
+  const counter = (id) => {
+    axios.post(`${config.apiBaseUrl}counter`, {
+      id: id,
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    
+    console.log(id);
+  };
+
   
 
   return (
@@ -49,7 +63,7 @@ function ProjectCard() {
              
             </Stack>
             <BtnGroup>
-              <a
+              <a onClick={() => { counter(list.id); }}
                 className="btn btn2 SecondarBtn"
                 href={list.source_link}
                 target="_blank"

@@ -28,7 +28,7 @@ function Hero({profile}) {
     });
   }, []);
 
-  console.log(avatar)
+  
   return (
     <main>
       <Dropdown isOpen={isOpen} toggle={toggle} />
@@ -52,7 +52,7 @@ function Hero({profile}) {
           <ScrollLink>
             Scroll down
             <img
-              src="https://raw.githubusercontent.com/gurupawar/portfolio/main/assets/scroll-down.svg"
+              src="https://icon-library.com/images/scroll-down-icon-png/scroll-down-icon-png-5.jpg"
               alt="scroll-down"
             />
           </ScrollLink>

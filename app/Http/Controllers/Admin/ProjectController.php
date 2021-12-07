@@ -15,7 +15,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::orderBy('id', 'DESC')->get();;
+        $projects = Project::orderBy('id', 'DESC')->get();
+        
         return view('admin.projects', ['project' => $projects]);
     }
 

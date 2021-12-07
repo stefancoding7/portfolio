@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Project;
+use App\Models\Stats;
 
 class IndexController extends Controller
 {
@@ -14,7 +16,16 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('admin/index');
+        $stats = Stats::find(1);
+        $projects = Project::orderBy('visitors', 'DESC')->take(5)->get();
+        $counter = Project::orderBy('visitors', 'DESC')->get();
+        $allVisitors = $counter->sum('visitors');
+        $projects->count();
+        return view('admin/index', ['projects' => $projects, 
+        'allVisitors' => $allVisitors,
+        'countProjects' => $projects->count(),
+        'stats' => $stats
+    ]);
     }
 
     /**

@@ -35,17 +35,19 @@ Route::post('/custom-registration', [App\Http\Controllers\Admin\LoginController:
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/auth/admin', [App\Http\Controllers\Admin\IndexController::class, 'index']);
-    Route::get('/auth/admin/settings', [App\Http\Controllers\Admin\SettingsController::class, 'index'])->name('settings');
+    Route::get('/auth/profile/settings', [App\Http\Controllers\Admin\SettingsController::class, 'index'])->name('settings');
     Route::get('/auth/admin/documentation', [App\Http\Controllers\Admin\DocumentationController::class, 'index'])->name('documentation');
     Route::get('/auth/admin/projects', [App\Http\Controllers\Admin\ProjectController::class, 'index'])->name('projects');
     Route::get('/auth/admin/project/{id}', [App\Http\Controllers\Admin\ProjectController::class, 'show'])->name('edit-project');
     Route::get('/auth/admin/seo', [App\Http\Controllers\Admin\SeoController::class, 'index'])->name('seo');
+    Route::get('/auth/admin/settings', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
 
 
     //SEO
     Route::post('/basic', [App\Http\Controllers\Admin\SeoController::class, 'basic'])->name('basic');
     Route::post('/analytics', [App\Http\Controllers\Admin\SeoController::class, 'analytics'])->name('analytics');
-
+    Route::post('/changepassword', [App\Http\Controllers\Admin\AdminController::class, 'changePasswordPost'])->name('changepassword');
+    Route::post('/changeemail', [App\Http\Controllers\Admin\AdminController::class, 'changeEmail'])->name('changeemail');
 
 
 

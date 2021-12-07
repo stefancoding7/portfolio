@@ -36,6 +36,10 @@ class DatabaseSeeder extends Seeder
             'basic_title' => NULL,
         ]);
 
+        DB::table('stats')->insert([
+            'visitors' => 0,
+        ]);
+
 
         
     }

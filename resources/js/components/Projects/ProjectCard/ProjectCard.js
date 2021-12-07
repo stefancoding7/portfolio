@@ -72,6 +72,7 @@ function ProjectCard() {
                 Github
               </a>
               <a
+                onClick={() => { counter(list.id); }}
                 className="btn PrimaryBtn"
                 href={list.demo_link}
                 target="_blank"

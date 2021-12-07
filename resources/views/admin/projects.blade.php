@@ -81,6 +81,8 @@
                                 <th>Position</th>
                                 <th>Title</th>
                                 <th>Description</th> 
+                                <th>Visitors</th> 
+                                <th>Last visited</th>
                                 <th></th>
                                  
                                </tr>
@@ -92,11 +94,13 @@
                                  
                                    
                                     
-                                        <td style="width:  7%" >{{ $projects->short_by }}</td>
+                                        <td style="width:  5%" >{{ $projects->short_by }}</td>
                                     
                                     
-                                   <td>{{ $projects->title }}</td>
+                                   <td >{{ $projects->title }}</td>
                                    <td>{{ $projects->description }}</td>
+                                   <td style="width:  5%"><div class="badge bg-info text-white">{{ $projects->visitors }}</div></td>
+                                   <td style="width:  10%">{{ $projects->updated_at->diffForHumans() }}</td>
                                    <td style="width:  20%"><a href="{{ route('edit-project', $projects->id) }}"><button type="submit" class="btn btn-primary">Edit</button></a>
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal-{{ $projects->id }}">
                                       Delete

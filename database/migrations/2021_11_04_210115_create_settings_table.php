@@ -25,6 +25,7 @@ class CreateSettingsTable extends Migration
             $table->mediumText('about_me')->nullable();
             $table->mediumText('site_name')->nullable();
             $table->mediumText('resume')->nullable();
+            $table->bigInteger('show_projects')->default(5);
            
             $table->timestamps();
         });

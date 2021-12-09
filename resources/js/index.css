@@ -55,7 +55,7 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  clip-path: ellipse(114% 100% at 50% 0%);
+  clip-path: ellipse(300% 100% at -82.5% 0%);
   
   
 }

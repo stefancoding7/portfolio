@@ -32,6 +32,8 @@ Route::post('/counter', [App\Http\Controllers\ProjectController::class, 'counter
 
 Route::post('/visitors', [App\Http\Controllers\StatsController::class, 'visitors']);
 
+Route::get('/projectperpage', [App\Http\Controllers\ProjectController::class, 'showProjects']);
+
 
 
 

@@ -77,3 +77,9 @@ export const BtnGroup = styled.div`
   display: flex;
   align-items: center;
 `;
+
+export const moreBtn = styled.div`
+
+  display: flex;
+  align-items: center;
+`;

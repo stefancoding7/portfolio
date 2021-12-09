@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import {
+  slice, concat, 
+} from 'lodash';
 import { ProjectList } from "../../../data/ProjectData";
 import config from '../../../config/config';
 import Fade from 'react-reveal/Fade';
-
+import axios from 'axios';
 
 
 import {
@@ -11,70 +14,115 @@ import {
   CardRight,
   Stack,
   BtnGroup,
+  moreBtn,
 } from "./ProjectCardElements";
-function ProjectCard() {
 
-  const [project, setProject] = useState([]);
+
+
+
+
+
   
 
 
+
+let arrayForHoldingPosts = [];
+
+function ProjectCard({ projects}) {
+  
+  //const [projects, setProjects] = useState([]);
+  const [postsPerPage, setPostsPerPage] = useState(0);
+  const [postsToShow, setPostsToShow] = useState([]);
+  const [next, setNext] = useState(0);
+ // console.log('before effect' + projects);
+console.log(next);
+
   useEffect(() => {
-    axios.get(`${config.apiBaseUrl}projects`).then((response) => {
-      setProject(response.data);
-    });
+     axios.get(`${config.apiBaseUrl}projectperpage`).then((response) => {
+         setNext(response.data);
+         setPostsPerPage(response.data); 
+        
+       })
+    
+   
   }, []);
+
+  useEffect(() => {
+    
+    loopWithSlice(0, postsPerPage);
+  }, [projects]);
+
+
+  const loopWithSlice = (start, end) => {
+   // console.log(projects);
+    const slicedPosts = projects.slice(start, end);
+    arrayForHoldingPosts = [...arrayForHoldingPosts, ...slicedPosts];
+    setPostsToShow(arrayForHoldingPosts);
+  };
+ 
+
+  
+    
+  
+  //  console.log('after loop' + projects);
+
+  
+
+  const handleShowMorePosts = () => {
+    
+    loopWithSlice(next, next + postsPerPage);
+    setNext(next + postsPerPage);
+    // console.log(projects.length);
+    // console.log(next);
+  };
 
   const counter = (id) => {
     axios.post(`${config.apiBaseUrl}counter`, {
       id: id,
     })
     .then(function (response) {
-      console.log(response);
+     // console.log(response);
     })
     .catch(function (error) {
-      console.log(error);
+     // console.log(error);
     });
     
-    console.log(id);
+    //console.log(id);
   };
 
-  
+ 
 
   return (
     <>
-      {project.map((list, index) => (
+  
+      {postsToShow.map((lists, index) => (
         <>
-       
+        
         <Fade left>
         <Card key={index}>
           <CardLeft>
-            <img src={`${config.imagesUrl + list.image}`} alt={list.title} />
+            <img src={`${config.imagesUrl + lists.image}`} alt={lists.title} />
           </CardLeft>
           <CardRight>
-            <h4>{list.title}</h4>
-            <p>{list.description}</p>
+            <h4>{lists.title}</h4>
+            <p>{lists.description}</p>
             <Stack>
-              <span className="stackTitle">Tech Stack -</span>
-              
-    <span className="tags">{list.tags}</span>
-
-                
-              
-             
+              <span className="stackTitle">Tech Stack -</span>           
+    <span className="tags">{lists.tags}</span>
             </Stack>
             <BtnGroup>
-              <a onClick={() => { counter(list.id); }}
+              <a onClick={() => { counter(lists.id); }}
                 className="btn btn2 SecondarBtn"
-                href={list.source_link}
+                href={lists.source_link}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Github
               </a>
               <a
-                onClick={() => { counter(list.id); }}
+                onClick={() => { counter(lists.id); }}
                 className="btn PrimaryBtn"
-                href={list.demo_link}
+                href={lists.demo_link}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -84,10 +132,26 @@ function ProjectCard() {
           </CardRight>
         </Card>
         </Fade>
+       
         </>
         
         
       ))}
+
+      
+      <>
+      <Stack>
+      <moreBtn>
+      { next < projects.length ? 
+      <button   className="btn PrimaryBtn"  onClick={handleShowMorePosts}>Load more</button> : ''
+      }
+      </moreBtn>
+      </Stack>
+      
+      </>
+      
+      
+      
     </>
   );
 }

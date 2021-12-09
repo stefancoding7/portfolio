@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Models\Settings;
 
 class ProjectController extends Controller
 {
@@ -22,6 +23,14 @@ class ProjectController extends Controller
         $project->update(
             ['visitors' => $counter]
         );
+    }
+
+    public function showProjects()
+    {
+        $settings = Settings::find(1);
+        $perPage = $settings->show_projects;
+
+        return response()->json($perPage);
     }
 
 }

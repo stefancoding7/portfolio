@@ -50,7 +50,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/changeemail', [App\Http\Controllers\Admin\AdminController::class, 'changeEmail'])->name('changeemail');
 
 
-
+    Route::post('/show-projects', [App\Http\Controllers\Admin\SettingsController::class, 'showProjects'])->name('show-projects');
     Route::post('/site-name', [App\Http\Controllers\Admin\SettingsController::class, 'siteName'])->name('site-name');
     Route::post('/resume', [App\Http\Controllers\Admin\SettingsController::class, 'resume'])->name('resume');
     Route::post('/delete-social/{id}', [App\Http\Controllers\Admin\SettingsController::class, 'deleteSocial'])->name('delete-social');

@@ -1,20 +1,23 @@
 ## Portfolio website
 <p>Laravel portfolio site with powerful admin panel and detailed statistics. Easy to add and manage new projects via the admin panel.<p><br>
-    - Create <b>.env</b>  file and add your database.
-    - Run 
-    
-    ``` 
-    php artisan migrate 
-    php artiasan db:seed 
-    ``` 
-    <p>will create default admin user. (Username: admin@admin.com, Password: password)
-    - Go to resources/js/config/config.js and change this line <p/>
-    
-    ``` 
-    let url = 'http://127.0.0.1:8000'; 
-    ``` 
+    <h3>Set the game to your own rules</h3>
+<p>For settings go to <b>/js/app.js</b></p>  
 
-with your website name if you would like to run production (CHANGE IT BEFORE YOU RUN PRODUCTION!!!)
+```javascript
+const maxLevel = 21;    
+```
+
+<p>Set the max level of the game. After when gamer hits the max level the game will end
+                        * forexample if you set level 3 the gamer when hit level 2 will win the game becasue level 3 is a max value.. so if 
+                        * you would like to finish the game with level 3 set the value to level 4</p>
+<br>
+
+```javascript
+const percent = 50; 
+```
+
+<p>Help beginning of the game. this value is percentage (%), so if you set maxLevel to 20 and percent to 25 in first 5 level get  random few letter  to help </p>
+       
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>

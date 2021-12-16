@@ -1,9 +1,9 @@
 ## Portfolio website
 <p>Laravel portfolio site with powerful admin panel and detailed statistics. Easy to add and manage new projects via the admin panel.<p><br>
-   - Create   ``` .env ```   file and add your database.
+    - Create <b>.env</b>  file and add your database.
     - Run 
     
-    ```javascript 
+    ``` 
     php artisan migrate 
 ``` 
     

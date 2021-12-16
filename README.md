@@ -1,4 +1,4 @@
-<p align="center"><span><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" width="400"></span></p>
+<p align="center"><span><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8yAB9GtWT7cfkYIo7ff4KejLABlBBehXdYJz2RpX9BGAAAKThj5cQsPI5NbDrTQW1zZY&usqp=CAU" width="400"></span></p>
 
 ## Portfolio website (Laravel, React)
 

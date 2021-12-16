@@ -2,6 +2,11 @@
 <p>Laravel portfolio site with powerful admin panel and detailed statistics. Easy to add and manage new projects via the admin panel.<p><br>
    - Create 
     
+    ```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
+    
     ``` 
     .env 
     

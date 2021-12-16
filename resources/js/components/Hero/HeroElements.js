@@ -101,11 +101,11 @@ const ScrollAnimation = keyframes`
 `;
 
 export const ScrollDown = styled(LinkScroll)`
-  margin-top: 3rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: flex-start;
   cursor: pointer;
-
+  padding: 2rem;
   animation: ${ScrollAnimation} 2s linear 0s infinite;
   @media screen and (max-width: 992px) {
     justify-content: center;
@@ -119,7 +119,10 @@ export const ScrollLink = styled.div`
   display: flex;
   align-items: center;
   font-size: 1.3rem;
-  color: #f6f6f6;
+  color: grey;
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
 
   img {
     height: 35px;
@@ -128,6 +131,7 @@ export const ScrollLink = styled.div`
   }
 
   .arrow {
+    color: grey;
 	width: 0;
 	height: 40px;
 	border: 1px solid #333;

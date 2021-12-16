@@ -21,7 +21,7 @@ class CreateProjectsTable extends Migration
             $table->string('tags')->nullable();
             $table->string('source_link')->nullable();
             $table->string('demo_link')->nullable();
-            $table->bigInteger('visitors')->default(0);
+            $table->bigInteger('visitors')->nullable();
             $table->bigInteger('short_by');
             $table->timestamps();
         });

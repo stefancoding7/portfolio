@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const ContactWrapper = styled.div`
   margin: 5rem 0;
+  -ms-transform: rotate(2deg); /* IE 9 */
+  transform: rotate(2deg);
 `;
 
 export const Email = styled.div`

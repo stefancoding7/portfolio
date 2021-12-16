@@ -14,7 +14,8 @@ import {
   CardRight,
   Stack,
   BtnGroup,
-  moreBtn,
+  MoreBtn,
+  btnMore
 } from "./ProjectCardElements";
 
 
@@ -31,21 +32,21 @@ let arrayForHoldingPosts = [];
 function ProjectCard({ projects}) {
   
   //const [projects, setProjects] = useState([]);
-  const [postsPerPage, setPostsPerPage] = useState(0);
+  const [postsPerPage, setPostsPerPage] = useState(5);
   const [postsToShow, setPostsToShow] = useState([]);
-  const [next, setNext] = useState(0);
+  const [next, setNext] = useState(5);
  // console.log('before effect' + projects);
-console.log(next);
+//console.log(next);
 
-  useEffect(() => {
-     axios.get(`${config.apiBaseUrl}projectperpage`).then((response) => {
-         setNext(response.data);
-         setPostsPerPage(response.data); 
+  // useEffect(() => {
+  //    axios.get(`${config.apiBaseUrl}projectperpage`).then((response) => {
+  //        setNext(response.data);
+  //        setPostsPerPage(response.data); 
         
-       })
+  //      })
     
    
-  }, []);
+  // }, []);
 
   useEffect(() => {
     
@@ -129,7 +130,9 @@ console.log(next);
                 Demo ➜
               </a>
             </BtnGroup>
+            
           </CardRight>
+          
         </Card>
         </Fade>
        
@@ -140,13 +143,16 @@ console.log(next);
 
       
       <>
-      <Stack>
-      <moreBtn>
-      { next < projects.length ? 
-      <button   className="btn PrimaryBtn"  onClick={handleShowMorePosts}>Load more</button> : ''
-      }
-      </moreBtn>
-      </Stack>
+      
+        <MoreBtn>
+        <div className="d-flex justify-content-center">
+        { next < projects.length ? 
+          <button   className="btn PrimaryBtn"  onClick={handleShowMorePosts}>Load more</button> : ''
+        }
+        </div>
+        
+        </MoreBtn>
+     
       
       </>
       

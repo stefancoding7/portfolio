@@ -2982,7 +2982,7 @@ var _templateObject, _templateObject2, _templateObject3, _templateObject4, _temp
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var ContactWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  margin-top: 5rem;\n"])));
+var ContactWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  margin-top: 5rem;\n  -ms-transform: rotate(-1deg); /* IE 9 */\n  transform: rotate(-1deg);\n  @media (min-width: 992px) {\n    -ms-transform: rotate(-2deg); /* IE 9 */\n  transform: rotate(-2deg);\n  }\n"])));
 var Image = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  \n  margin: 0 auto;\n  margin-bottom: 1rem;\n  @media only screen and (min-width: 600px) {max-width: 300px;} \n  @media only screen and (min-width: 992px) {max-width: 600px;} \n"])));
 var Technologies = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin-right: auto;\n  margin-left: auto;\n  margin-bottom: -2rem;\n"])));
 var Tech = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  max-width: 100px;\n  min-width: 100px;\n  margin-bottom: 2rem;\n"])));
@@ -3066,7 +3066,7 @@ var _templateObject, _templateObject2;
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var ContactWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  margin: 5rem 0;\n"])));
+var ContactWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  margin: 5rem 0;\n  -ms-transform: rotate(2deg); /* IE 9 */\n  transform: rotate(2deg);\n"])));
 var Email = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  justify-content: space-around;\n\n  span {\n    font-size: 1rem;\n    font-weight: 500;\n    margin-bottom: 1rem;\n  }\n\n  @media (min-width: 576px) {\n    span {\n      font-size: 1.5rem;\n    }\n  }\n  @media (min-width: 992px) {\n    flex-direction: row;\n    span {\n      margin-bottom: 0;\n      font-size: 3rem;\n    }\n  }\n"])));
 
 /***/ }),
@@ -3179,13 +3179,14 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var FooterSection = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  background-image: url(https://res.cloudinary.com/dbqxzdxhf/image/upload/v1636666568/wave_nz0os0.svg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  width: 100%;\n  height: 300px;\n  position: relative;\n\n  span {\n    position: absolute;\n    bottom: 4rem;\n    color: #fff;\n\n    a {\n      text-decoration: underline;\n    }\n  }\n"])));
+var FooterSection = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  background-image: url(https://res.cloudinary.com/dbqxzdxhf/image/upload/v1636666568/wave_nz0os0.svg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  width: 100%;\n  height: 300px;\n  position: relative;\n  \n\n  span {\n    position: absolute;\n    bottom: 4rem;\n    color: #fff;\n\n    a {\n      text-decoration: underline;\n    }\n  }\n"])));
 
 function Footer(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FooterSection, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "Container",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+        className: "text-secondary",
         children: ["Coded with \uD83D\uDC99 by", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
           href: props.profile.email,
           target: "_blank",
@@ -3436,8 +3437,8 @@ var HeroLeft = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_te
 var HeroRight = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  flex: 1;\n  justify-content: center;\n  display: flex;\n"])));
 var Image = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].img(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  height: 300px;\n  width: auto;\n  border-radius: 50%;\n    -webkit-border-radius: 50%;\n    -moz-border-radius: 50%;\n \n"])));
 var ScrollAnimation = (0,styled_components__WEBPACK_IMPORTED_MODULE_1__.keyframes)(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  0%,\n  20%,\n  50%,\n  80%,\n  100% {\n    transform: translateY(0);\n  }\n  40% {\n    transform: translateY(-20px);\n  }\n  60% {\n    transform: translateY(-10px);\n  }\n"])));
-var ScrollDown = (0,styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(react_scroll__WEBPACK_IMPORTED_MODULE_0__.Link)(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  margin-top: 3rem;\n  display: flex;\n  justify-content: flex-start;\n  cursor: pointer;\n\n  animation: ", " 2s linear 0s infinite;\n  @media screen and (max-width: 992px) {\n    justify-content: center;\n  }\n"])), ScrollAnimation);
-var ScrollLink = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  font-size: 1.3rem;\n  color: #f6f6f6;\n\n  img {\n    height: 35px;\n    width: 35px;\n    margin-left: 6px;\n  }\n\n  .arrow {\n\twidth: 0;\n\theight: 40px;\n\tborder: 1px solid #333;\n\tposition: relative;\n\tanimation: scroll 1.5s infinite;\n\t-webkit-animation: scroll 1.5s infinite;\n\t&::after {\n\t\tcontent: '';\n    display: block;\n    position: absolute;\n    top: 100%;\n    left: -5px;\n    width: 1px;\n    height: 10px;\n\t\t\n\t\t// triangle\n    border-top: 10px solid #333;\n    border-left: 5px solid transparent;\n    border-right: 5px solid transparent;\n\t}\n}\n\n@keyframes scroll {\n\t0% {\n\t\theight: 40px;\n\t}\n\t30% {\n\t\theight: 70px;\n\t}\n\t60% {\n\t\theight: 40px;\n\t}\n}\n\n@-webkit-keyframes scroll {\n\t0% {\n\t\theight: 40px;\n\t}\n\t30% {\n\t\theight: 70px;\n\t}\n\t60% {\n\t\theight: 40px;\n\t}\n}\n"])));
+var ScrollDown = (0,styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(react_scroll__WEBPACK_IMPORTED_MODULE_0__.Link)(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  margin-top: 1rem;\n  display: flex;\n  justify-content: flex-start;\n  cursor: pointer;\n  padding: 2rem;\n  animation: ", " 2s linear 0s infinite;\n  @media screen and (max-width: 992px) {\n    justify-content: center;\n  }\n"])), ScrollAnimation);
+var ScrollLink = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  font-size: 1.3rem;\n  color: grey;\n  @media screen and (max-width: 992px) {\n    display: none;\n  }\n\n  img {\n    height: 35px;\n    width: 35px;\n    margin-left: 6px;\n  }\n\n  .arrow {\n    color: grey;\n\twidth: 0;\n\theight: 40px;\n\tborder: 1px solid #333;\n\tposition: relative;\n\tanimation: scroll 1.5s infinite;\n\t-webkit-animation: scroll 1.5s infinite;\n\t&::after {\n\t\tcontent: '';\n    display: block;\n    position: absolute;\n    top: 100%;\n    left: -5px;\n    width: 1px;\n    height: 10px;\n\t\t\n\t\t// triangle\n    border-top: 10px solid #333;\n    border-left: 5px solid transparent;\n    border-right: 5px solid transparent;\n\t}\n}\n\n@keyframes scroll {\n\t0% {\n\t\theight: 40px;\n\t}\n\t30% {\n\t\theight: 70px;\n\t}\n\t60% {\n\t\theight: 40px;\n\t}\n}\n\n@-webkit-keyframes scroll {\n\t0% {\n\t\theight: 40px;\n\t}\n\t30% {\n\t\theight: 70px;\n\t}\n\t60% {\n\t\theight: 40px;\n\t}\n}\n"])));
 
 /***/ }),
 
@@ -3499,7 +3500,7 @@ function ProjectCard(_ref) {
   var projects = _ref.projects;
 
   //const [projects, setProjects] = useState([]);
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(5),
       _useState2 = _slicedToArray(_useState, 2),
       postsPerPage = _useState2[0],
       setPostsPerPage = _useState2[1];
@@ -3509,19 +3510,19 @@ function ProjectCard(_ref) {
       postsToShow = _useState4[0],
       setPostsToShow = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(5),
       _useState6 = _slicedToArray(_useState5, 2),
       next = _useState6[0],
       setNext = _useState6[1]; // console.log('before effect' + projects);
+  //console.log(next);
+  // useEffect(() => {
+  //    axios.get(`${config.apiBaseUrl}projectperpage`).then((response) => {
+  //        setNext(response.data);
+  //        setPostsPerPage(response.data); 
+  //      })
+  // }, []);
 
 
-  console.log(next);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios__WEBPACK_IMPORTED_MODULE_5___default().get("".concat(_config_config__WEBPACK_IMPORTED_MODULE_3__["default"].apiBaseUrl, "projectperpage")).then(function (response) {
-      setNext(response.data);
-      setPostsPerPage(response.data);
-    });
-  }, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     loopWithSlice(0, postsPerPage);
   }, [projects]);
@@ -3598,8 +3599,9 @@ function ProjectCard(_ref) {
         })
       });
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_ProjectCardElements__WEBPACK_IMPORTED_MODULE_6__.Stack, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("moreBtn", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_ProjectCardElements__WEBPACK_IMPORTED_MODULE_6__.MoreBtn, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          className: "d-flex justify-content-center",
           children: next < projects.length ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
             className: "btn PrimaryBtn",
             onClick: handleShowMorePosts,
@@ -3629,7 +3631,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "CardRight": () => (/* binding */ CardRight),
 /* harmony export */   "Stack": () => (/* binding */ Stack),
 /* harmony export */   "BtnGroup": () => (/* binding */ BtnGroup),
-/* harmony export */   "moreBtn": () => (/* binding */ moreBtn)
+/* harmony export */   "MoreBtn": () => (/* binding */ MoreBtn)
 /* harmony export */ });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
@@ -3637,12 +3639,12 @@ var _templateObject, _templateObject2, _templateObject3, _templateObject4, _temp
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var Card = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 2rem;\n  margin-bottom: 4rem;\n  grid-template-columns: 1fr;\n  border-bottom: 1px solid rgb(0, 0, 0);\n  padding-bottom: 2rem;\n  @media (min-width: 992px) {\n    grid-template-columns: 1fr 1fr;\n    border-bottom: 0;\n    padding-bottom: 0;\n  }\n"])));
+var Card = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 2rem;\n  margin-bottom: 4rem;\n  grid-template-columns: 1fr;\n  border-bottom: 1px solid rgb(0, 0, 0);\n  padding-bottom: 2rem;\n  \n  @media (min-width: 992px) {\n    grid-template-columns: 1fr 1fr;\n    border-bottom: 0;\n    padding-bottom: 0;\n  }\n"])));
 var CardLeft = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  background: #151418;\n  border-radius: 5px;\n  padding: 5px;\n  justify-self: center;\n\n  img {\n    border-radius: 3px;\n    height: auto;\n  }\n"])));
 var CardRight = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n\n  h4 {\n    font-size: 1.5rem;\n    font-weight: 400;\n  }\n\n  p {\n    font-weight: 400;\n    max-width: 400px;\n    margin-top: 10px;\n    margin-bottom: 1rem;\n    color: rgba(0, 0, 0, 0.815);\n    text-align: center;\n\n    @media (min-width: 992px) {\n      text-align: start;\n    }\n  }\n  @media (min-width: 992px) {\n    align-items: flex-start;\n    margin-top: 1rem;\n  }\n"])));
 var Stack = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  margin-bottom: 5px;\n\n  .stackTitle {\n    font-weight: 500;\n    margin-right: 10px;\n    font-size: 17px;\n  }\n\n  .tags {\n    font-size: 15px;\n    font-weight: 400;\n  }\n"])));
 var BtnGroup = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  height: 70px;\n  display: flex;\n  align-items: center;\n"])));
-var moreBtn = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n\n  display: flex;\n  align-items: center;\n"])));
+var MoreBtn = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n\nmargin: 0 auto;\n"])));
 
 /***/ }),
 
@@ -3872,7 +3874,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 // change this URL for production or testing URL
-var url = 'http://192.168.0.21:5000';
+var url = 'http://127.0.0.1:8000';
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   imagesUrl: "".concat(url, "/storage/images/"),
   apiBaseUrl: "".concat(url, "/api/")
@@ -3981,10 +3983,6 @@ function App() {
   (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(function () {
     axios.post("".concat(_config_config__WEBPACK_IMPORTED_MODULE_2__["default"].apiBaseUrl, "visitors"), {
       stats: true
-    }).then(function (response) {
-      console.log(response);
-    })["catch"](function (error) {
-      console.log(error);
     });
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.BrowserRouter, {

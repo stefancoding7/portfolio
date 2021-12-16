@@ -17,6 +17,7 @@ class IndexController extends Controller
     public function index()
     {
         $stats = Stats::find(1);
+        $allProjects = Project::orderBy('visitors', 'DESC')->get();
         $projects = Project::orderBy('visitors', 'DESC')->take(5)->get();
         $counter = Project::orderBy('visitors', 'DESC')->get();
         $allVisitors = $counter->sum('visitors');
@@ -24,7 +25,8 @@ class IndexController extends Controller
         return view('admin/index', ['projects' => $projects, 
         'allVisitors' => $allVisitors,
         'countProjects' => $projects->count(),
-        'stats' => $stats
+        'stats' => $stats,
+        'allProjects' => $allProjects->count()
     ]);
     }
 

@@ -9,6 +9,7 @@ const FooterSection = styled.div`
   width: 100%;
   height: 300px;
   position: relative;
+  
 
   span {
     position: absolute;
@@ -24,7 +25,7 @@ function Footer(props) {
   return (
     <FooterSection>
       <div className="Container">
-        <span>
+        <span className="text-secondary">
           Coded with 💙 by{" "}
           <a
             href={props.profile.email}

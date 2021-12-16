@@ -15,7 +15,7 @@ class CreateStatsTable extends Migration
     {
         Schema::create('stats', function (Blueprint $table) {
             $table->unsignedBigInteger('id')->primary();
-            $table->bigInteger('visitors')->default(0);
+            $table->bigInteger('visitors')->nullable();
             $table->timestamps();
         });
     }

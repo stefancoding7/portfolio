@@ -2,6 +2,12 @@ import styled from "styled-components";
 
 export const ContactWrapper = styled.div`
   margin-top: 5rem;
+  -ms-transform: rotate(-1deg); /* IE 9 */
+  transform: rotate(-1deg);
+  @media (min-width: 992px) {
+    -ms-transform: rotate(-2deg); /* IE 9 */
+  transform: rotate(-2deg);
+  }
 `;
 
 export const Image = styled.img`

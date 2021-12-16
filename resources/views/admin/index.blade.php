@@ -58,7 +58,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Projects</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ number_format($countProjects) }}</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ number_format($allProjects) }}</div>
                                         </div>
                                         <div class="col-auto">
                                             

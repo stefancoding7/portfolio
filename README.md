@@ -1,8 +1,8 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><span><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a><img href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" width="400"></span></p>
 
 ## Portfolio website (Laravel, React)
 
-<h4><a href="https://stefancoding.com/">DEMO</a> if you would like to see website in action.</h4>
+<h4><a href="https://stefancoding.com/" target="_blank">DEMO</a> if you would like to see website in action.</h4>
 
 <p>Laravel portfolio site with powerful admin panel and detailed statistics. Easy to add and manage new projects via the admin panel.<p><br>
     <h3>Installation</h3>
@@ -37,14 +37,14 @@ export default {
 
 ## REST API documentation
 
-<h4>/profile -> GET || <a target="_blank" href="https://stefancoding.com/api/profile">TEST URL</a></h4>
+<h4>/profile -> GET || <a href="https://stefancoding.com/api/profile" target="_blank">TEST URL</a></h4>
     - <b>profile->avatar</b> => get avatar picture<br>
     - <b>profile->logo</b> => get logo of web page<br>
     - <b>profile->site_switch</b> => <b>true</b> or <b>false</b> (For shut down the website if need maintrance) <br>
     - <b>profile->short_info</b> => Short info with HTML rendering. Use with any textarea. Also works with any className
                                          and HTML elemets. Use <span class="inline-code">dangerouslySetInnerHTML</span><br>
 
-<h4>/projects -> GET || <a target="_blank" href="https://stefancoding.com/api/projects">TEST URL</a></h4>
+<h4>/projects -> GET || <a href="https://stefancoding.com/api/projects" target="_blank">TEST URL</a></h4>
     - <b>project->title</b> => Project title<br>
     - <b>project->description</b> => Project description<br>
     - <b>project->image</b> => Project image<br>

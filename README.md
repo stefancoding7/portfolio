@@ -1,3 +1,7 @@
+## PLEASE USE VERSION 2. (THIS VERSION IS HAVE SOME BUGS AND NOT SUPPORTED ANYMORE) YOU COULD FIND IN BRANCH OR <a href="https://github.com/stefancoding7/portfolio/tree/version-2">HERE</a>
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">

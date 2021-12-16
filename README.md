@@ -8,10 +8,7 @@ markdown = Redcarpet.new("Hello World!")
 puts markdown.to_html
 ```
     
-    ```ruby 
-    .env 
-``` 
-    file and add your database.
+    ``` .env ``` file and add your database.
     - Run 
     
     ```javascript 

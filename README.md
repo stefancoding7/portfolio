@@ -6,8 +6,8 @@
     ``` 
     php artisan migrate 
     php artiasan db:seed 
-``` will create default admin user. (Username: admin@admin.com, Password: password)
-    - Go to resources/js/config/config.js and change this line 
+``` <p>will create default admin user. (Username: admin@admin.com, Password: password)
+    - Go to resources/js/config/config.js and change this line <p/>
     ``` 
     let url = 'http://127.0.0.1:8000'; 
 ``` with your website name if you would like to run production (CHANGE IT BEFORE YOU RUN PRODUCTION!!!)

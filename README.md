@@ -8,11 +8,24 @@ php artisan migrate
 php artisan db:seed
 ```
 
-<p>Will create default admin user (Username: admin@admin.com, Password: password)/p>
+<p>Will create default admin user (Username: <b>admin@admin.com</b>, Password: <b>password</b>)</p>
 <br>
+<p>(For production only) -> Go to <b>resource/js/config/config.js</b> and change <b>url</b> variable with your domain name. </p>
 
 ```javascript
-const percent = 50; 
+let url = 'http://127.0.0.1:8000';
+
+export default {
+  
+    imagesUrl: `${url}/storage/images/`,
+    apiBaseUrl: `${url}/api/`,
+  };
+```
+
+<p>Than run</p>
+
+```javascript
+php artisan serve
 ```
 
 <p>Help beginning of the game. this value is percentage (%), so if you set maxLevel to 20 and percent to 25 in first 5 level get  random few letter  to help </p>

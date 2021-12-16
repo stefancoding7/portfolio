@@ -5,10 +5,8 @@
     ``` 
     .env 
     
-    ``` 
-    
-    file and add your database.
-   - Run 
+    ``` file and add your database.
+    - Run 
     
     ```javascript 
     php artisan migrate 

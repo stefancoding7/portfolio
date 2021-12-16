@@ -6,14 +6,11 @@
     ``` 
     php artisan migrate 
     php artiasan db:seed 
-    ``` 
-    will create default admin user. (Username: admin@admin.com, Password: password)
-   - Go to resources/js/config/config.js and change this line 
+    ``` will create default admin user. (Username: admin@admin.com, Password: password)
+    - Go to resources/js/config/config.js and change this line 
     ``` 
     let url = 'http://127.0.0.1:8000'; 
-    ``` 
-    
-    with your website name if you would like to run production (CHANGE IT BEFORE YOU RUN PRODUCTION!!!)
+    ``` with your website name if you would like to run production (CHANGE IT BEFORE YOU RUN PRODUCTION!!!)
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>

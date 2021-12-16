@@ -34,14 +34,14 @@ export default {
 
 ## REST API documentation
 
-<h4>/profile -> GET</h4><a target="_blank" href="https://stefancoding.com/api/profile">TEST URL</a>
+<h4>/profile -> GET || <a target="_blank" href="https://stefancoding.com/api/profile">TEST URL</a></h4>
     - <b>profile->avatar</b> = get avatar picture<br>
     - <b>profile->logo</b> = get logo of web page<br>
     - <b>profile->site_switch</b> = <b>true</b> or <b>false</b> (For shut down the website if need maintrance) <br>
     - <b>profile->short_info</b> = Short info with HTML rendering. Use with any textarea. Also works with any className
                                          and HTML elemets. Use <span class="inline-code">dangerouslySetInnerHTML</span><br>
 
-<h4>/projects -> GET</h4><a target="_blank" href="https://stefancoding.com/api/projects">TEST URL</a>
+<h4>/projects -> GET || <a target="_blank" href="https://stefancoding.com/api/projects">TEST URL</a></h4>
     - <b>project->title</b> = Project title<br>
     - <b>project->description</b> = Project description<br>
     - <b>project->image</b> = Project image<br>

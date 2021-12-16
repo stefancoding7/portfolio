@@ -28,9 +28,6 @@ export default {
 php artisan serve
 ```
 
-<p>Help beginning of the game. this value is percentage (%), so if you set maxLevel to 20 and percent to 25 in first 5 level get  random few letter  to help </p>
-       
-
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 

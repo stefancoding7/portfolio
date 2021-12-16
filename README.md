@@ -10,8 +10,9 @@
     
     will create default admin user. (Username: admin@admin.com, Password: password)
    - Go to resources/js/config/config.js and change this line 
-    
-    ``` let url = 'http://127.0.0.1:8000'; ``` 
+    ``` 
+    let url = 'http://127.0.0.1:8000'; 
+    ``` 
     
     with your website name if you would like to run production (CHANGE IT BEFORE YOU RUN PRODUCTION!!!)
 

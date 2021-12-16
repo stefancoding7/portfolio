@@ -2,7 +2,7 @@
 
 ## Portfolio website (Laravel, React)
 
-<h4><a href="https://stefancoding.com/">DEMO</a></h4>
+<h4><a href="https://stefancoding.com/">DEMO</a> if you would like to see website in action.</h4>
 
 <p>Laravel portfolio site with powerful admin panel and detailed statistics. Easy to add and manage new projects via the admin panel.<p><br>
     <h3>Installation</h3>

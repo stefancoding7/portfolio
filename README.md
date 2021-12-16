@@ -1,15 +1,14 @@
 ## Portfolio website
 <p>Laravel portfolio site with powerful admin panel and detailed statistics. Easy to add and manage new projects via the admin panel.<p><br>
-    <h3>Set the game to your own rules</h3>
-<p>For settings go to <b>/js/app.js</b></p>  
+    <h3>Installation</h3>
+<p>Create <b>.env</b> file. Than <b>Run</b> this commands.</b></p>  
 
 ```javascript
-const maxLevel = 21;    
+php artisan migrate
+php artisan db:seed
 ```
 
-<p>Set the max level of the game. After when gamer hits the max level the game will end
-                        * forexample if you set level 3 the gamer when hit level 2 will win the game becasue level 3 is a max value.. so if 
-                        * you would like to finish the game with level 3 set the value to level 4</p>
+<p>Will create default admin user (Username: admin@admin.com, Password: password)/p>
 <br>
 
 ```javascript

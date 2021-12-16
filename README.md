@@ -1,4 +1,4 @@
-## Portfolio website
+## Portfolio website (Laravel, React)
 <p>Laravel portfolio site with powerful admin panel and detailed statistics. Easy to add and manage new projects via the admin panel.<p><br>
     <h3>Installation</h3>
 <p>Create <b>.env</b> file. Than <b>Run</b> this commands.</b></p>  
@@ -10,7 +10,7 @@ php artisan db:seed
 
 <p>Will create default admin user (Username: <b>admin@admin.com</b>, Password: <b>password</b>)</p>
 <br>
-<p>(For production only) -> Go to <b>resource/js/config/config.js</b> and change <b>url</b> variable with your domain name. </p>
+<p>(<b>For production only</b>) -> Go to <b>resource/js/config/config.js</b> and change <b>url</b> variable with your domain name. </p>
 
 ```javascript
 let url = 'http://127.0.0.1:8000';

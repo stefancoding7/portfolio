@@ -5,18 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Stats extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'image',
-        'title',
-        'description',
-        'tags',
-        'source_link',
-        'demo_link',
-        'short_by',
-        'visitors'
+        'visitors', 
     ];
 }

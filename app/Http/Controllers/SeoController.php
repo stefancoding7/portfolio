@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Seo;
 use Illuminate\Http\Request;
-use App\Models\Project;
-use App\Models\Stats;
 
-class IndexController extends Controller
+class SeoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,18 +14,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $stats = Stats::find(1);
-        $allProjects = Project::orderBy('visitors', 'DESC')->get();
-        $projects = Project::orderBy('visitors', 'DESC')->take(5)->get();
-        $counter = Project::orderBy('visitors', 'DESC')->get();
-        $allVisitors = $counter->sum('visitors');
-        $projects->count();
-        return view('admin/index', ['projects' => $projects, 
-        'allVisitors' => $allVisitors,
-        'countProjects' => $projects->count(),
-        'stats' => $stats,
-        'allProjects' => $allProjects->count()
-    ]);
+        //
     }
 
     /**
@@ -54,10 +41,10 @@ class IndexController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Seo  $seo
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Seo $seo)
     {
         //
     }
@@ -65,10 +52,10 @@ class IndexController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Seo  $seo
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Seo $seo)
     {
         //
     }
@@ -77,10 +64,10 @@ class IndexController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Seo  $seo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Seo $seo)
     {
         //
     }
@@ -88,10 +75,10 @@ class IndexController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Seo  $seo
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Seo $seo)
     {
         //
     }

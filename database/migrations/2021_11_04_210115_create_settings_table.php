@@ -16,15 +16,17 @@ class CreateSettingsTable extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->unsignedBigInteger('id')->primary();
             
-            $table->boolean('site_switch')->default(true);
+            $table->boolean('site_switch')->nullable();
             $table->string('avatar')->nullable();
             $table->string('logo')->nullable();
-            $table->boolean('short_info');
+            $table->string('short_info')->nullable();
             $table->string('about_me_image')->nullable();
             $table->string('email')->nullable();
             $table->mediumText('about_me')->nullable();
             $table->mediumText('site_name')->nullable();
             $table->mediumText('resume')->nullable();
+            $table->bigInteger('show_projects')->nullable();
+           
             $table->timestamps();
         });
     }

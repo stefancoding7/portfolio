@@ -7,6 +7,7 @@ export const Card = styled.div`
   grid-template-columns: 1fr;
   border-bottom: 1px solid rgb(0, 0, 0);
   padding-bottom: 2rem;
+  
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr;
     border-bottom: 0;
@@ -77,3 +78,11 @@ export const BtnGroup = styled.div`
   display: flex;
   align-items: center;
 `;
+
+export const MoreBtn = styled.div`
+
+margin: 0 auto;
+`;
+
+
+

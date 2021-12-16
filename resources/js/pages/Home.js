@@ -7,6 +7,7 @@ import Footer from "../components/Footer/Footer";
 import FixSocialIcon from "../components/SocialIcon/FixSocialIcon";
 
 
+
 import config from '../config/config';
 
 
@@ -15,7 +16,7 @@ import config from '../config/config';
 function Home() {
   const [profile, setProfile] = useState([]);
 
-
+  
 
   useEffect(() => {
     axios.get(`${config.apiBaseUrl}profile`).then((response) => {
@@ -26,12 +27,17 @@ function Home() {
 
   return (
     <>
+    
+
       <Hero profile={profile}/>
       <Projects />
       <About profile={profile}/>
       <Contact profile={profile}/>
       <Footer profile={profile}/>
       <FixSocialIcon />
+    
+
+      
     </>
   );
 }

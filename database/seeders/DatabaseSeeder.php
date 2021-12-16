@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('settings')->insert([
+            'id' => 1,
             'site_switch' => true,
             'short_info' => "<h1>Hi, I'm Stefan</h1>
             <h5>Full-stack developer</h5>
@@ -31,6 +32,17 @@ class DatabaseSeeder extends Seeder
               I design and code beautifully simple things, and I love what I do.
             </p>"
         ]);
+
+        DB::table('seos')->insert([
+            'id' => 1,
+            'basic_title' => 'My site',
+        ]);
+
+        DB::table('stats')->insert([
+            'id' => 1,
+            'visitors' => 0,
+        ]);
+
 
         
     }

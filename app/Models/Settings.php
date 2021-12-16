@@ -18,7 +18,8 @@ class Settings extends Model
         'about_me',
         'email',
         'site_name',
-        'resume'
+        'resume',
+        'show_projects'
     ];
 
 }

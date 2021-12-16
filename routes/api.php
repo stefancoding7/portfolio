@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+ Route::middleware('auth')->get('/user', function (Request $request) {
+     return $request->user();
+        
+ });
 
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index']);
 
@@ -26,4 +27,17 @@ Route::get('/socials', [App\Http\Controllers\ProfileController::class, 'socials'
 
 
 Route::get('/projects', [App\Http\Controllers\ProjectController::class, 'index']);
+
+Route::post('/counter', [App\Http\Controllers\ProjectController::class, 'counter']);
+
+Route::post('/visitors', [App\Http\Controllers\StatsController::class, 'visitors']);
+
+Route::get('/projectperpage', [App\Http\Controllers\ProjectController::class, 'showProjects']);
+
+
+
+
+
+
+
 

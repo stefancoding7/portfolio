@@ -13,15 +13,54 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #fafaff;
   font-weight: 400;
+  -webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 5s; /* Firefox < 16 */
+        -ms-animation: fadein 5s; /* Internet Explorer */
+         -o-animation: fadein 5s; /* Opera < 12.1 */
+            animation: fadein 5s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 main {
-  background: #151418;
-  background-image: url(https://raw.githubusercontent.com/gurupawar/portfolio/main/assets/blob-haikei.svg);
+  background: #B55A30;
+  background-image: url(https://images.unsplash.com/photo-1609602644879-dd158c2b56b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
+  clip-path: ellipse(300% 100% at -82.5% 0%);
+  
+  
 }
+
+
 
 a {
   text-decoration: none;
@@ -65,9 +104,9 @@ video {
 }
 
 .btn {
-  border: 2px solid rgb(57, 134, 250);
+  
   padding: 10px 1rem;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   font-weight: 400;
@@ -75,7 +114,7 @@ video {
 }
 
 .PrimaryBtn {
-  background: rgb(57, 134, 250);
+  background: rgb(83, 83, 83);
   color: #f6f6f6;
 }
 
@@ -136,7 +175,7 @@ video {
   margin-bottom: 3.5rem;
 }
 .ProjectWrapper {
-  margin-top: -1rem;
+  margin-top: 3rem;
 }
 
 /* ------------------------------------ Media for Container */
@@ -150,7 +189,7 @@ video {
     max-width: 720px;
   }
   .ProjectWrapper {
-    margin-top: -5rem;
+    margin-top: 3rem;
   }
 }
 @media (min-width: 992px) {

@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Project;
-use App\Models\Stats;
+use App\Models\Seo;
 
-class IndexController extends Controller
+class SeoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,18 +15,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $stats = Stats::find(1);
-        $allProjects = Project::orderBy('visitors', 'DESC')->get();
-        $projects = Project::orderBy('visitors', 'DESC')->take(5)->get();
-        $counter = Project::orderBy('visitors', 'DESC')->get();
-        $allVisitors = $counter->sum('visitors');
-        $projects->count();
-        return view('admin/index', ['projects' => $projects, 
-        'allVisitors' => $allVisitors,
-        'countProjects' => $projects->count(),
-        'stats' => $stats,
-        'allProjects' => $allProjects->count()
-    ]);
+        $seo = Seo::find(1);
+        return view('admin.seo', ['seo' => $seo]);
     }
 
     /**
@@ -95,4 +84,31 @@ class IndexController extends Controller
     {
         //
     }
+
+    public function basic(Request $request)
+    {
+        $seo = Seo::find(1);
+       
+        $seo->update([
+            'basic_title' => $request->title,
+            'basic_description' => $request->description
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function analytics(Request $request)
+       {
+        $seo = Seo::find(1);
+       
+        $seo->update([
+            'analytics_1' => $request->analytics_1,
+            'analytics_2' => $request->analytics_2
+        ]);
+
+        return redirect()->back();
+    }
+
+
+    
 }

@@ -249,5 +249,12 @@ class SettingsController extends Controller
         return redirect()->back();
     }
 
+    public function showProjects(Request $request)
+    {
+        $settings = Settings::find(1);
+        $settings->update(['show_projects' => $request->show_projects]);
+        return redirect()->back();
+    }
+
 
 }

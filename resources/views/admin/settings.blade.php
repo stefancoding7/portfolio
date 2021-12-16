@@ -209,6 +209,20 @@
                 </form>
             </div>
         </div>
+
+        <div class="col-12 col-lg-6">
+            <div class="card shadow m-4 p-3">
+                <h3>Show projects per page</h3>
+                <form method="POST" action="{{ route('show-projects') }}">
+                    @csrf
+                    <div class="form-group">
+                        <label for="exampleDataList" class="form-label">Specifie how many projects would like to show per page</label>
+                        <input class="form-control" name="show_projects" list="datalistOptions" id="exampleDataList"  value="{{ $settings->show_projects }}">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
     </div>
     <!--Code skills  Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

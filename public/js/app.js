@@ -2982,7 +2982,7 @@ var _templateObject, _templateObject2, _templateObject3, _templateObject4, _temp
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var ContactWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  margin-top: 5rem;\n"])));
+var ContactWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  margin-top: 5rem;\n  -ms-transform: rotate(-1deg); /* IE 9 */\n  transform: rotate(-1deg);\n  @media (min-width: 992px) {\n    -ms-transform: rotate(-2deg); /* IE 9 */\n  transform: rotate(-2deg);\n  }\n"])));
 var Image = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  \n  margin: 0 auto;\n  margin-bottom: 1rem;\n  @media only screen and (min-width: 600px) {max-width: 300px;} \n  @media only screen and (min-width: 992px) {max-width: 600px;} \n"])));
 var Technologies = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin-right: auto;\n  margin-left: auto;\n  margin-bottom: -2rem;\n"])));
 var Tech = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  max-width: 100px;\n  min-width: 100px;\n  margin-bottom: 2rem;\n"])));
@@ -3066,7 +3066,7 @@ var _templateObject, _templateObject2;
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var ContactWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  margin: 5rem 0;\n"])));
+var ContactWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  margin: 5rem 0;\n  -ms-transform: rotate(2deg); /* IE 9 */\n  transform: rotate(2deg);\n"])));
 var Email = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  justify-content: space-around;\n\n  span {\n    font-size: 1rem;\n    font-weight: 500;\n    margin-bottom: 1rem;\n  }\n\n  @media (min-width: 576px) {\n    span {\n      font-size: 1.5rem;\n    }\n  }\n  @media (min-width: 992px) {\n    flex-direction: row;\n    span {\n      margin-bottom: 0;\n      font-size: 3rem;\n    }\n  }\n"])));
 
 /***/ }),
@@ -3179,13 +3179,14 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var FooterSection = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  background-image: url(https://raw.githubusercontent.com/gurupawar/portfolio/main/assets/footer_wave.svg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  width: 100%;\n  height: 250px;\n  position: relative;\n\n  span {\n    position: absolute;\n    bottom: 4rem;\n    color: #fff;\n\n    a {\n      text-decoration: underline;\n    }\n  }\n"])));
+var FooterSection = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  background-image: url(https://res.cloudinary.com/dbqxzdxhf/image/upload/v1636666568/wave_nz0os0.svg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  width: 100%;\n  height: 300px;\n  position: relative;\n  \n\n  span {\n    position: absolute;\n    bottom: 4rem;\n    color: #fff;\n\n    a {\n      text-decoration: underline;\n    }\n  }\n"])));
 
 function Footer(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FooterSection, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "Container",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+        className: "text-secondary",
         children: ["Coded with \uD83D\uDC99 by", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
           href: props.profile.email,
           target: "_blank",
@@ -3353,10 +3354,20 @@ function Hero(_ref) {
       isOpen = _useState2[0],
       setIsOpen = _useState2[1];
 
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      avatar = _useState4[0],
+      setAvatar = _useState4[1];
+
   var toggle = function toggle() {
     setIsOpen(!isOpen);
   };
 
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    axios__WEBPACK_IMPORTED_MODULE_3___default().get("".concat(_config_config__WEBPACK_IMPORTED_MODULE_4__["default"].apiBaseUrl, "profile")).then(function (response) {
+      setAvatar(response.data);
+    });
+  }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("main", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Dropdown_Dropdown__WEBPACK_IMPORTED_MODULE_1__["default"], {
       isOpen: isOpen,
@@ -3374,15 +3385,15 @@ function Hero(_ref) {
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_HeroElements__WEBPACK_IMPORTED_MODULE_5__.HeroRight, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_HeroElements__WEBPACK_IMPORTED_MODULE_5__.Image, {
-            src: "".concat(_config_config__WEBPACK_IMPORTED_MODULE_4__["default"].imagesUrl + profile.avatar),
-            alt: "man-svgrepo"
+            src: "".concat(_config_config__WEBPACK_IMPORTED_MODULE_4__["default"].imagesUrl + avatar.avatar),
+            alt: "StefanCoding"
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_HeroElements__WEBPACK_IMPORTED_MODULE_5__.ScrollDown, {
         to: "projects",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_HeroElements__WEBPACK_IMPORTED_MODULE_5__.ScrollLink, {
           children: ["Scroll down", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-            src: "https://raw.githubusercontent.com/gurupawar/portfolio/main/assets/scroll-down.svg",
+            src: "https://icon-library.com/images/scroll-down-icon-png/scroll-down-icon-png-5.jpg",
             alt: "scroll-down"
           })]
         })
@@ -3424,10 +3435,10 @@ var HeroContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].di
 var HeroWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n\n  @media screen and (max-width: 992px) {\n    flex-direction: column;\n  }\n"])));
 var HeroLeft = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n  text-align: left;\n  flex: 1;\n\n  h1 {\n    font-size: 2.8rem;\n    color: #f6f6f6;\n    opacity: 0.98;\n    font-weight: 400;\n  }\n\n  h5 {\n    font-size: 1.6rem;\n    color: rgb(119, 119, 121);\n    margin-bottom: 1rem;\n    font-weight: 400;\n  }\n\n  p {\n    font-size: 17px;\n    color: #f6f6f6;\n    opacity: 0.85;\n  }\n\n  @media screen and (max-width: 992px) {\n    text-align: center;\n    align-items: center;\n    margin-bottom: 2rem;\n  }\n"])));
 var HeroRight = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  flex: 1;\n  justify-content: center;\n  display: flex;\n"])));
-var Image = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].img(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  height: 300px;\n  width: auto;\n"])));
+var Image = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].img(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  height: 300px;\n  width: auto;\n  border-radius: 50%;\n    -webkit-border-radius: 50%;\n    -moz-border-radius: 50%;\n \n"])));
 var ScrollAnimation = (0,styled_components__WEBPACK_IMPORTED_MODULE_1__.keyframes)(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  0%,\n  20%,\n  50%,\n  80%,\n  100% {\n    transform: translateY(0);\n  }\n  40% {\n    transform: translateY(-20px);\n  }\n  60% {\n    transform: translateY(-10px);\n  }\n"])));
-var ScrollDown = (0,styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(react_scroll__WEBPACK_IMPORTED_MODULE_0__.Link)(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  margin-top: 3rem;\n  display: flex;\n  justify-content: flex-start;\n  cursor: pointer;\n\n  animation: ", " 2s linear 0s infinite;\n  @media screen and (max-width: 992px) {\n    justify-content: center;\n  }\n"])), ScrollAnimation);
-var ScrollLink = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  font-size: 1.3rem;\n  color: #f6f6f6;\n\n  img {\n    height: 35px;\n    width: 35px;\n    margin-left: 6px;\n  }\n\n  .arrow {\n\twidth: 0;\n\theight: 40px;\n\tborder: 1px solid #333;\n\tposition: relative;\n\tanimation: scroll 1.5s infinite;\n\t-webkit-animation: scroll 1.5s infinite;\n\t&::after {\n\t\tcontent: '';\n    display: block;\n    position: absolute;\n    top: 100%;\n    left: -5px;\n    width: 1px;\n    height: 10px;\n\t\t\n\t\t// triangle\n    border-top: 10px solid #333;\n    border-left: 5px solid transparent;\n    border-right: 5px solid transparent;\n\t}\n}\n\n@keyframes scroll {\n\t0% {\n\t\theight: 40px;\n\t}\n\t30% {\n\t\theight: 70px;\n\t}\n\t60% {\n\t\theight: 40px;\n\t}\n}\n\n@-webkit-keyframes scroll {\n\t0% {\n\t\theight: 40px;\n\t}\n\t30% {\n\t\theight: 70px;\n\t}\n\t60% {\n\t\theight: 40px;\n\t}\n}\n"])));
+var ScrollDown = (0,styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(react_scroll__WEBPACK_IMPORTED_MODULE_0__.Link)(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  margin-top: 1rem;\n  display: flex;\n  justify-content: flex-start;\n  cursor: pointer;\n  padding: 2rem;\n  animation: ", " 2s linear 0s infinite;\n  @media screen and (max-width: 992px) {\n    justify-content: center;\n  }\n"])), ScrollAnimation);
+var ScrollLink = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  font-size: 1.3rem;\n  color: grey;\n  @media screen and (max-width: 992px) {\n    display: none;\n  }\n\n  img {\n    height: 35px;\n    width: 35px;\n    margin-left: 6px;\n  }\n\n  .arrow {\n    color: grey;\n\twidth: 0;\n\theight: 40px;\n\tborder: 1px solid #333;\n\tposition: relative;\n\tanimation: scroll 1.5s infinite;\n\t-webkit-animation: scroll 1.5s infinite;\n\t&::after {\n\t\tcontent: '';\n    display: block;\n    position: absolute;\n    top: 100%;\n    left: -5px;\n    width: 1px;\n    height: 10px;\n\t\t\n\t\t// triangle\n    border-top: 10px solid #333;\n    border-left: 5px solid transparent;\n    border-right: 5px solid transparent;\n\t}\n}\n\n@keyframes scroll {\n\t0% {\n\t\theight: 40px;\n\t}\n\t30% {\n\t\theight: 70px;\n\t}\n\t60% {\n\t\theight: 40px;\n\t}\n}\n\n@-webkit-keyframes scroll {\n\t0% {\n\t\theight: 40px;\n\t}\n\t30% {\n\t\theight: 70px;\n\t}\n\t60% {\n\t\theight: 40px;\n\t}\n}\n"])));
 
 /***/ }),
 
@@ -3443,12 +3454,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _data_ProjectData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../data/ProjectData */ "./resources/js/data/ProjectData.js");
-/* harmony import */ var _config_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../config/config */ "./resources/js/config/config.js");
-/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-reveal/Fade */ "./node_modules/react-reveal/Fade.js");
-/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _ProjectCardElements__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ProjectCardElements */ "./resources/js/components/Projects/ProjectCard/ProjectCardElements.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _data_ProjectData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../data/ProjectData */ "./resources/js/data/ProjectData.js");
+/* harmony import */ var _config_config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../config/config */ "./resources/js/config/config.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-reveal/Fade */ "./node_modules/react-reveal/Fade.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _ProjectCardElements__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ProjectCardElements */ "./resources/js/components/Projects/ProjectCard/ProjectCardElements.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -3470,51 +3493,102 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-function ProjectCard() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+
+var arrayForHoldingPosts = [];
+
+function ProjectCard(_ref) {
+  var projects = _ref.projects;
+
+  //const [projects, setProjects] = useState([]);
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(5),
       _useState2 = _slicedToArray(_useState, 2),
-      project = _useState2[0],
-      setProject = _useState2[1];
+      postsPerPage = _useState2[0],
+      setPostsPerPage = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      postsToShow = _useState4[0],
+      setPostsToShow = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(5),
+      _useState6 = _slicedToArray(_useState5, 2),
+      next = _useState6[0],
+      setNext = _useState6[1]; // console.log('before effect' + projects);
+  //console.log(next);
+  // useEffect(() => {
+  //    axios.get(`${config.apiBaseUrl}projectperpage`).then((response) => {
+  //        setNext(response.data);
+  //        setPostsPerPage(response.data); 
+  //      })
+  // }, []);
+
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios.get("".concat(_config_config__WEBPACK_IMPORTED_MODULE_2__["default"].apiBaseUrl, "projects")).then(function (response) {
-      setProject(response.data);
-    });
-  }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-    children: project.map(function (list, index) {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)((react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3___default()), {
+    loopWithSlice(0, postsPerPage);
+  }, [projects]);
+
+  var loopWithSlice = function loopWithSlice(start, end) {
+    // console.log(projects);
+    var slicedPosts = projects.slice(start, end);
+    arrayForHoldingPosts = [].concat(_toConsumableArray(arrayForHoldingPosts), _toConsumableArray(slicedPosts));
+    setPostsToShow(arrayForHoldingPosts);
+  }; //  console.log('after loop' + projects);
+
+
+  var handleShowMorePosts = function handleShowMorePosts() {
+    loopWithSlice(next, next + postsPerPage);
+    setNext(next + postsPerPage); // console.log(projects.length);
+    // console.log(next);
+  };
+
+  var counter = function counter(id) {
+    axios__WEBPACK_IMPORTED_MODULE_5___default().post("".concat(_config_config__WEBPACK_IMPORTED_MODULE_3__["default"].apiBaseUrl, "counter"), {
+      id: id
+    }).then(function (response) {// console.log(response);
+    })["catch"](function (error) {// console.log(error);
+    }); //console.log(id);
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+    children: [postsToShow.map(function (lists, index) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)((react_reveal_Fade__WEBPACK_IMPORTED_MODULE_4___default()), {
           left: true,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_ProjectCardElements__WEBPACK_IMPORTED_MODULE_4__.Card, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ProjectCardElements__WEBPACK_IMPORTED_MODULE_4__.CardLeft, {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-                src: "".concat(_config_config__WEBPACK_IMPORTED_MODULE_2__["default"].imagesUrl + list.image),
-                alt: list.title
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_ProjectCardElements__WEBPACK_IMPORTED_MODULE_6__.Card, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_ProjectCardElements__WEBPACK_IMPORTED_MODULE_6__.CardLeft, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                src: "".concat(_config_config__WEBPACK_IMPORTED_MODULE_3__["default"].imagesUrl + lists.image),
+                alt: lists.title
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_ProjectCardElements__WEBPACK_IMPORTED_MODULE_4__.CardRight, {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h4", {
-                children: list.title
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-                children: list.description
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_ProjectCardElements__WEBPACK_IMPORTED_MODULE_4__.Stack, {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_ProjectCardElements__WEBPACK_IMPORTED_MODULE_6__.CardRight, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
+                children: lists.title
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+                children: lists.description
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_ProjectCardElements__WEBPACK_IMPORTED_MODULE_6__.Stack, {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
                   className: "stackTitle",
                   children: "Tech Stack -"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
                   className: "tags",
-                  children: list.tags
+                  children: lists.tags
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_ProjectCardElements__WEBPACK_IMPORTED_MODULE_4__.BtnGroup, {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_ProjectCardElements__WEBPACK_IMPORTED_MODULE_6__.BtnGroup, {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
+                  onClick: function onClick() {
+                    counter(lists.id);
+                  },
                   className: "btn btn2 SecondarBtn",
-                  href: list.source_link,
+                  href: lists.source_link,
                   target: "_blank",
                   rel: "noopener noreferrer",
                   children: "Github"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
+                  onClick: function onClick() {
+                    counter(lists.id);
+                  },
                   className: "btn PrimaryBtn",
-                  href: list.demo_link,
+                  href: lists.demo_link,
                   target: "_blank",
                   rel: "noopener noreferrer",
                   children: "Demo \u279C"
@@ -3524,7 +3598,18 @@ function ProjectCard() {
           }, index)
         })
       });
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_ProjectCardElements__WEBPACK_IMPORTED_MODULE_6__.MoreBtn, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          className: "d-flex justify-content-center",
+          children: next < projects.length ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+            className: "btn PrimaryBtn",
+            onClick: handleShowMorePosts,
+            children: "Load more"
+          }) : ''
+        })
+      })
+    })]
   });
 }
 
@@ -3545,19 +3630,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "CardLeft": () => (/* binding */ CardLeft),
 /* harmony export */   "CardRight": () => (/* binding */ CardRight),
 /* harmony export */   "Stack": () => (/* binding */ Stack),
-/* harmony export */   "BtnGroup": () => (/* binding */ BtnGroup)
+/* harmony export */   "BtnGroup": () => (/* binding */ BtnGroup),
+/* harmony export */   "MoreBtn": () => (/* binding */ MoreBtn)
 /* harmony export */ });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var Card = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 2rem;\n  margin-bottom: 4rem;\n  grid-template-columns: 1fr;\n  border-bottom: 1px solid rgb(0, 0, 0);\n  padding-bottom: 2rem;\n  @media (min-width: 992px) {\n    grid-template-columns: 1fr 1fr;\n    border-bottom: 0;\n    padding-bottom: 0;\n  }\n"])));
+var Card = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: grid;\n  grid-gap: 2rem;\n  margin-bottom: 4rem;\n  grid-template-columns: 1fr;\n  border-bottom: 1px solid rgb(0, 0, 0);\n  padding-bottom: 2rem;\n  \n  @media (min-width: 992px) {\n    grid-template-columns: 1fr 1fr;\n    border-bottom: 0;\n    padding-bottom: 0;\n  }\n"])));
 var CardLeft = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  background: #151418;\n  border-radius: 5px;\n  padding: 5px;\n  justify-self: center;\n\n  img {\n    border-radius: 3px;\n    height: auto;\n  }\n"])));
 var CardRight = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n\n  h4 {\n    font-size: 1.5rem;\n    font-weight: 400;\n  }\n\n  p {\n    font-weight: 400;\n    max-width: 400px;\n    margin-top: 10px;\n    margin-bottom: 1rem;\n    color: rgba(0, 0, 0, 0.815);\n    text-align: center;\n\n    @media (min-width: 992px) {\n      text-align: start;\n    }\n  }\n  @media (min-width: 992px) {\n    align-items: flex-start;\n    margin-top: 1rem;\n  }\n"])));
 var Stack = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  margin-bottom: 5px;\n\n  .stackTitle {\n    font-weight: 500;\n    margin-right: 10px;\n    font-size: 17px;\n  }\n\n  .tags {\n    font-size: 15px;\n    font-weight: 400;\n  }\n"])));
 var BtnGroup = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  height: 70px;\n  display: flex;\n  align-items: center;\n"])));
+var MoreBtn = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n\nmargin: 0 auto;\n"])));
 
 /***/ }),
 
@@ -3574,7 +3661,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _ProjectCard_ProjectCard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProjectCard/ProjectCard */ "./resources/js/components/Projects/ProjectCard/ProjectCard.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _config_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../config/config */ "./resources/js/config/config.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 
 
@@ -3582,33 +3683,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Projects() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
-      height: "100%",
-      width: "100%",
-      id: "svg",
-      viewBox: "0 0 1440 400",
-      xmlns: "http://www.w3.org/2000/svg",
-      "class": "transition duration-300 ease-in-out delay-150",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
-        d: "M 0,400 C 0,400 0,200 0,200 C 114.35714285714289,156.53571428571428 228.71428571428578,113.07142857142858 351,131 C 473.2857142857142,148.92857142857142 603.4999999999998,228.25 713,248 C 822.5000000000002,267.75 911.2857142857144,227.92857142857142 1029,210 C 1146.7142857142856,192.07142857142858 1293.3571428571427,196.03571428571428 1440,200 C 1440,200 1440,400 1440,400 Z",
-        stroke: "none",
-        "stroke-width": "0",
-        fill: "#151418ff",
-        "class": "transition-all duration-300 ease-in-out delay-150",
-        transform: "rotate(-180 720 200)"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      projects = _useState2[0],
+      setProjects = _useState2[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    axios.get("".concat(_config_config__WEBPACK_IMPORTED_MODULE_2__["default"].apiBaseUrl, "projects")).then(function (response) {
+      setProjects(response.data);
+    });
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "ProjectWrapper",
       id: "projects",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "Container",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "SectionTitle",
           children: "Projects"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ProjectCard_ProjectCard__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ProjectCard_ProjectCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          projects: projects
+        })]
       })
-    })]
+    })
   });
 }
 
@@ -3776,7 +3874,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 // change this URL for production or testing URL
-var url = 'http://192.168.0.21:5000';
+var url = 'http://127.0.0.1:8000';
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   imagesUrl: "".concat(url, "/storage/images/"),
   apiBaseUrl: "".concat(url, "/api/")
@@ -3864,10 +3962,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.css */ "./resources/js/App.css");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/Home */ "./resources/js/pages/Home.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _config_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config/config */ "./resources/js/config/config.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -3880,8 +3980,13 @@ __webpack_require__(/*! ../css/app.css */ "./resources/css/app.css");
 
 
 function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.BrowserRouter, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_pages_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+  (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(function () {
+    axios.post("".concat(_config_config__WEBPACK_IMPORTED_MODULE_2__["default"].apiBaseUrl, "visitors"), {
+      stats: true
+    });
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.BrowserRouter, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_pages_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {})
   });
 }
 
@@ -8393,7 +8498,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "*,\n*::before,\n*::after {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  scroll-behavior: smooth;\n}\nbody {\n  font-family: \"Poppins\", sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  background: #fafaff;\n  font-weight: 400;\n}\n\nmain {\n  background: #151418;\n  background-image: url(https://raw.githubusercontent.com/gurupawar/portfolio/main/assets/blob-haikei.svg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  width: 100%;\n}\n\na {\n  text-decoration: none;\n  color: inherit;\n  background-color: transparent;\n}\n\nul,\nol {\n  list-style: none;\n}\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmenu,\nnav,\nsection {\n  display: block;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-size: 100%;\n  font-weight: normal;\n}\n\nimg,\nvideo {\n  display: block;\n  max-width: 100%;\n}\n\n.btn {\n  border: 2px solid rgb(57, 134, 250);\n  padding: 10px 1rem;\n  border-radius: 5px;\n  cursor: pointer;\n  transition: all 0.2s ease-in-out;\n  font-weight: 400;\n  outline: none;\n}\n\n.PrimaryBtn {\n  background: rgb(57, 134, 250);\n  color: #f6f6f6;\n}\n\n.PrimaryBtn:hover {\n  background: #fff;\n  color: #010606;\n}\n\n.SecondarBtn:hover {\n  background: rgb(57, 134, 250);\n  color: #fff;\n}\n\n.btn2 {\n  margin-right: 1rem;\n}\n\n.Container {\n  width: 100%;\n  padding-right: 1rem;\n  padding-left: 1rem;\n  margin-right: auto;\n  margin-left: auto;\n}\n\n.BigCard {\n  padding-top: 3rem;\n  padding-bottom: 3rem;\n  padding-right: 2rem;\n  padding-left: 2rem;\n  border-radius: 1rem;\n  display: flex;\n  flex-direction: column;\n  background: #fff;\n  box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;\n  /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),\n    0 4px 6px -2px rgba(0, 0, 0, 0.05); */\n}\n\n.AboutBio,\n.tagline2 {\n  text-align: center;\n  max-width: 650px;\n  margin: 0 auto;\n  color: #151418;\n  line-height: 1.6;\n}\n\n.tagline2 {\n  margin-top: 1rem;\n  margin-bottom: 2rem;\n}\n\n.SectionTitle {\n  font-size: 28px;\n  color: #151418;\n  font-weight: 700;\n  margin-bottom: 3.5rem;\n}\n.ProjectWrapper {\n  margin-top: -1rem;\n}\n\n/* ------------------------------------ Media for Container */\n@media (min-width: 576px) {\n  .Container {\n    max-width: 540px;\n  }\n}\n@media (min-width: 768px) {\n  .Container {\n    max-width: 720px;\n  }\n  .ProjectWrapper {\n    margin-top: -5rem;\n  }\n}\n@media (min-width: 992px) {\n  .Container {\n    max-width: 960px;\n  }\n}\n@media (min-width: 1200px) {\n  .Container {\n    max-width: 1000px;\n  }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "*,\r\n*::before,\r\n*::after {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  scroll-behavior: smooth;\r\n}\r\nbody {\r\n  font-family: \"Poppins\", sans-serif;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n  background: #fafaff;\r\n  font-weight: 400;\r\n  -webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */ /* Firefox < 16 */ /* Internet Explorer */ /* Opera < 12.1 */\r\n            animation: fadein 5s;\r\n}\r\n\r\n@keyframes fadein {\r\n  from { opacity: 0; }\r\n  to   { opacity: 1; }\r\n}\r\n\r\n/* Firefox < 16 */\r\n\r\n/* Safari, Chrome and Opera > 12.1 */\r\n@-webkit-keyframes fadein {\r\n  from { opacity: 0; }\r\n  to   { opacity: 1; }\r\n}\r\n\r\n/* Internet Explorer */\r\n\r\n/* Opera < 12.1 */\r\n\r\nmain {\r\n  background: #B55A30;\r\n  background-image: url(https://images.unsplash.com/photo-1609602644879-dd158c2b56b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80);\r\n  background-repeat: no-repeat;\r\n  background-size: cover;\r\n  width: 100%;\r\n  -webkit-clip-path: ellipse(300% 100% at -82.5% 0%);\r\n          clip-path: ellipse(300% 100% at -82.5% 0%);\r\n  \r\n  \r\n}\r\n\r\n\r\n\r\na {\r\n  text-decoration: none;\r\n  color: inherit;\r\n  background-color: transparent;\r\n}\r\n\r\nul,\r\nol {\r\n  list-style: none;\r\n}\r\n\r\narticle,\r\naside,\r\ndetails,\r\nfigcaption,\r\nfigure,\r\nfooter,\r\nheader,\r\nhgroup,\r\nmenu,\r\nnav,\r\nsection {\r\n  display: block;\r\n}\r\n\r\nh1,\r\nh2,\r\nh3,\r\nh4,\r\nh5,\r\nh6 {\r\n  font-size: 100%;\r\n  font-weight: normal;\r\n}\r\n\r\nimg,\r\nvideo {\r\n  display: block;\r\n  max-width: 100%;\r\n}\r\n\r\n.btn {\r\n  \r\n  padding: 10px 1rem;\r\n  border-radius: 20px;\r\n  cursor: pointer;\r\n  transition: all 0.2s ease-in-out;\r\n  font-weight: 400;\r\n  outline: none;\r\n}\r\n\r\n.PrimaryBtn {\r\n  background: rgb(83, 83, 83);\r\n  color: #f6f6f6;\r\n}\r\n\r\n.PrimaryBtn:hover {\r\n  background: #fff;\r\n  color: #010606;\r\n}\r\n\r\n.SecondarBtn:hover {\r\n  background: rgb(57, 134, 250);\r\n  color: #fff;\r\n}\r\n\r\n.btn2 {\r\n  margin-right: 1rem;\r\n}\r\n\r\n.Container {\r\n  width: 100%;\r\n  padding-right: 1rem;\r\n  padding-left: 1rem;\r\n  margin-right: auto;\r\n  margin-left: auto;\r\n}\r\n\r\n.BigCard {\r\n  padding-top: 3rem;\r\n  padding-bottom: 3rem;\r\n  padding-right: 2rem;\r\n  padding-left: 2rem;\r\n  border-radius: 1rem;\r\n  display: flex;\r\n  flex-direction: column;\r\n  background: #fff;\r\n  box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;\r\n  /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),\r\n    0 4px 6px -2px rgba(0, 0, 0, 0.05); */\r\n}\r\n\r\n.AboutBio,\r\n.tagline2 {\r\n  text-align: center;\r\n  max-width: 650px;\r\n  margin: 0 auto;\r\n  color: #151418;\r\n  line-height: 1.6;\r\n}\r\n\r\n.tagline2 {\r\n  margin-top: 1rem;\r\n  margin-bottom: 2rem;\r\n}\r\n\r\n.SectionTitle {\r\n  font-size: 28px;\r\n  color: #151418;\r\n  font-weight: 700;\r\n  margin-bottom: 3.5rem;\r\n}\r\n.ProjectWrapper {\r\n  margin-top: 3rem;\r\n}\r\n\r\n/* ------------------------------------ Media for Container */\r\n@media (min-width: 576px) {\r\n  .Container {\r\n    max-width: 540px;\r\n  }\r\n}\r\n@media (min-width: 768px) {\r\n  .Container {\r\n    max-width: 720px;\r\n  }\r\n  .ProjectWrapper {\r\n    margin-top: 3rem;\r\n  }\r\n}\r\n@media (min-width: 992px) {\r\n  .Container {\r\n    max-width: 960px;\r\n  }\r\n}\r\n@media (min-width: 1200px) {\r\n  .Container {\r\n    max-width: 1000px;\r\n  }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -1,14 +1,6 @@
 ## Portfolio website
 <p>Laravel portfolio site with powerful admin panel and detailed statistics. Easy to add and manage new projects via the admin panel.<p><br>
-   - Create 
-    
-   ```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
-    
-    ``` .env ``` file and add your database.
+   - Create   ``` .env ```   file and add your database.
     - Run 
     
     ```javascript 

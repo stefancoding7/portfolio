@@ -2,8 +2,9 @@
 <p>Laravel portfolio site with powerful admin panel and detailed statistics. Easy to add and manage new projects via the admin panel.<p><br>
    - Create 
     
-    ```javascript 
+    ``` 
     .env 
+    
     ``` 
     
     file and add your database.
